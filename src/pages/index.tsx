@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
+//import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 
 const inter = Inter({ subsets: ["latin"] });
 

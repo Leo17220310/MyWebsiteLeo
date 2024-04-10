@@ -82,7 +82,7 @@
 
 
   body {
-    background-color: rgb(27, 22, 49);
+    background-color: rgb(46, 41, 70);
   }
 
 
@@ -99,13 +99,13 @@
 
  .custom-new-text{
    margin-left: 210px;
-   margin-top: 200px;
+   margin-top: 180px;
  }
 
  .custom-margin-image-2 img {
   width: 400px; /* Setze die gewünschte Breite */
   height: 400px; /* Setze die gewünschte Höhe */
-  margin-top: -450px;
+  margin-top: -400px;
   margin-left: 1200px;
 }
 

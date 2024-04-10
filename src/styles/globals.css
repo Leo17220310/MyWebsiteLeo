@@ -80,29 +80,34 @@
     margin-left: 210px; /* Hier können Sie die gewünschte Höhe einstellen */
   }
 
-  .custom-margin-image {
-    margin-top: -300px;
 
-  }
   body {
-    background-color: rgb(5, 4, 24);
-  }
-
-  .custom-margin-image {
-    margin-top: -330px;
-    margin-left: 220px; /* Hier können Sie die gewünschte Höhe einstellen */
- 
-  }
-  
-  .small-logo {
-    width: 100px; /* Hier kannst du die Breite des Bildes anpassen */
-    height: auto; /* Das stellt sicher, dass das Seitenverhältnis beibehalten wird */
+    background-color: rgb(27, 22, 49);
   }
 
 
+  .custom-margin-little-text{
+    margin-top: -200px;
+    margin-left: 210px;
+  }
 
+  .custom-button{
+    margin-top: 30px;
+    margin-left: 210px;
 
+  }
 
+ .custom-new-text{
+   margin-left: 210px;
+   margin-top: 200px;
+ }
+
+ .custom-margin-image-2 img {
+  width: 400px; /* Setze die gewünschte Breite */
+  height: 400px; /* Setze die gewünschte Höhe */
+  margin-top: -450px;
+  margin-left: 1200px;
+}
 
 
 

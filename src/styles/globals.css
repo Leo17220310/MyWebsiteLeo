@@ -110,11 +110,49 @@
 }
 
 
+.bottom-text {
+  position: fixed;
+  bottom: 20px; /* Anpassen der vertikalen Position */
+  left: 50%; /* Zentrieren des Textes horizontal */
+  transform: translateX(-50%);
+  z-index: 999; /* Stellen Sie sicher, dass der Text über anderen Inhalten liegt */
+  background-color: rgba(0, 0, 0, 0.5); /* Hintergrundfarbe */
+  color: white; /* Textfarbe */
+  padding: 10px 20px; /* Innenabstand */
+  border-radius: 8px; /* Runde Ecken */
+  display: none; /* Den Text zunächst ausblenden */
+}
 
 
 
 
 
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Diese Klasse wird verwendet, um die Animation auszulösen, wenn sie im sichtbaren Bereich ist */
+.web-development-heading {
+  animation: slideInFromBottom 0.5s ease-in-out forwards;
+  margin-top: 400px;
+}
+
+.sticky-scroll{
+  margin-left: -720px;
+}
+
+.python-Heading{
+  margin-top: 200px;
+  margin-left: 220px;
+  
+}
 
 
 
@@ -135,7 +173,8 @@
 
   }
   body {
-    background-color: rgb(5, 4, 24);
+    background-color:
+     rgb(5, 4, 24);
   }
 
   .custom-margin-image {

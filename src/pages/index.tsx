@@ -11,7 +11,7 @@ export default function Home() {
 
   const words = [
     {
-      text: "Programmer",
+      text: "Programmer", 
       className: "text-indigo-600",
     },
   ];
@@ -25,7 +25,7 @@ export default function Home() {
     {
       title: "Get Summary",
       description:
-        "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        "Explore our dynamic platform! Utilizing Octo AI API, we merge text and images from PDFs seamlessly. With 5000 lines of code, continual improvements ensure optimal user experience.My best Website. Here's the Link: https://ai-tool.kuehnle.me/",
       content: (
         <div className="h-full w-full">
           <img
@@ -37,19 +37,22 @@ export default function Home() {
       ),
     },
     {
-      title: "Altes Portfolio",
-      description:
-        "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+      title: "Old Portfolio",
+      description: "Welcome to my old portfolio, a labor of love hosted on GitHub. Crafted as a fun project to refine my HTML and CSS skills, it showcases my journey in web development. Explore its pages to witness the evolution of my abilities and the projects I've undertaken. Though it's a relic of the past, it remains a testament to my dedication to mastering the craft. Here's the Link: https://leo17220310.github.io/Portfolio/ .",
       content: (
         <div className="h-full w-full">
           <img
-            src="\programmer-image.jpg"
+            src="\Portfolio.png"
             className="h-full w-full object-cover"
             alt="Your second image alt text"
           />
         </div>
-      ),
-    },
+      )
+    }
+    
+    
+    
+    
   ];
   
   
@@ -60,7 +63,7 @@ export default function Home() {
 
       <div className="custom-margin text-5xl font-bold text-white">
         <h1>
-          Hi, I'm Leo,{" "}
+          Hi, I'm Leo !{" "}
           <span className="text-indigo-600 ">
             {" "}
             <TypewriterEffectSmooth words={words} />{" "}
@@ -93,7 +96,7 @@ export default function Home() {
 
       <div
         ref={webDevelopmentRef}
-        className="custom-margin text-4xl font-bold text-white web-development-heading"
+        className="mt-[281px] ml-[200px] text-4xl font-bold text-white underline"
       >
         <h2>Web-Development</h2>
       </div>
@@ -102,7 +105,7 @@ export default function Home() {
         <StickyScroll content={content} />
       </div>
 
-      <div className="python-Heading text-white font-bold text-4xl">
+      <div className="m-[200px] text-white font-bold text-4xl">
         <h3>Python-Projects</h3>
       </div>
     </>

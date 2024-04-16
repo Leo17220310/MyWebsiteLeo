@@ -75,121 +75,19 @@
     }
   }
 
-  .custom-margin {
-    margin-top: 300px;
-    margin-left: 210px; /* Hier können Sie die gewünschte Höhe einstellen */
-  }
-
-
   body {
     background-color: rgb(46, 41, 70);
   }
 
-
-  .custom-margin-little-text{
-    margin-top: -200px;
-    margin-left: 210px;
+  .background-image {
+    background-image: url('/imageLeo.png');
+    background-size: cover; /* Das Bild wird so skaliert, dass es den gesamten Bereich des Elements ausfüllt */
+    background-position: center; /* Das Bild wird zentriert */
+    opacity: 0.8; /* Ändere die Deckkraft nach Bedarf, um das Bild zu verschmelzen */
   }
 
-  .custom-button{
-    margin-top: 30px;
-    margin-left: 210px;
 
-  }
-
- .custom-new-text{
-   margin-left: 210px;
-   margin-top: 180px;
- }
-
- .custom-margin-image-2 img {
-  width: 400px; /* Setze die gewünschte Breite */
-  height: 400px; /* Setze die gewünschte Höhe */
-  margin-top: -400px;
-  margin-left: 1200px;
-}
-
-
-.bottom-text {
-  position: fixed;
-  bottom: 20px; /* Anpassen der vertikalen Position */
-  left: 50%; /* Zentrieren des Textes horizontal */
-  transform: translateX(-50%);
-  z-index: 999; /* Stellen Sie sicher, dass der Text über anderen Inhalten liegt */
-  background-color: rgba(0, 0, 0, 0.5); /* Hintergrundfarbe */
-  color: white; /* Textfarbe */
-  padding: 10px 20px; /* Innenabstand */
-  border-radius: 8px; /* Runde Ecken */
-  display: none; /* Den Text zunächst ausblenden */
-}
-
-
-
-
-
-@keyframes slideInFromBottom {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Diese Klasse wird verwendet, um die Animation auszulösen, wenn sie im sichtbaren Bereich ist */
-.web-development-heading {
-  animation: slideInFromBottom 0.5s ease-in-out forwards;
-  margin-top: 400px;
-}
-
-.sticky-scroll{
-  margin-left: -720px;
-}
-
-.python-Heading{
-  margin-top: 200px;
-  margin-left: 220px;
-  
-}
-
-
-
-
-  @media only screen and (max-width: 600px) {
-    /* Stile für Geräte mit einer Bildschirmbreite von maximal 600px */
-    
-  .custom-margin {
-    margin-top: 200px;
-    margin-left: 10px; /* Hier können Sie die gewünschte Höhe einstellen */
-    margin-bottom: 80px;
-    margin-right: 30px;
-  }
-
-  .custom-margin-image {
-    margin-top: -300px;
  
-
-  }
-  body {
-    background-color:
-     rgb(5, 4, 24);
-  }
-
-  .custom-margin-image {
-    margin-top: -330px;
-    margin-left: 220px; /* Hier können Sie die gewünschte Höhe einstellen */
- 
-  }
-  
-  .small-logo {
-    width: 100px; /* Hier kannst du die Breite des Bildes anpassen */
-    height: auto; /* Das stellt sicher, dass das Seitenverhältnis beibehalten wird */
-  }
-   
-  }
-  
 
   
   

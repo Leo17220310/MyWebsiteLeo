@@ -1,18 +1,29 @@
-import { useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 import { Button } from "@/components/ui/button";
-import React from "react";
 import { StickyScroll } from "../components/ui/scroll-reveal";
-import Image from "next/image";
+import { Menubar, MenubarTrigger, MenubarMenu } from "@/components/ui/menubar";
+import { RefObject } from "react";
 
 export default function Home() {
-  // TYPEWRITER EFFECT
-  const webDevelopmentRef = useRef(null);
+  // Refs für die Verweise zu den Abschnitten der Seite
+  const webDevelopmentRef = useRef<HTMLDivElement>(null);
+  const pythonProjectsRef = useRef<HTMLDivElement>(null);
+
+  // Scroll-Funktion für das Scrollen zu einem bestimmten Abschnitt der Seite
+  const scrollToRef = (ref: RefObject<HTMLDivElement> | null) => {
+    if (ref && ref.current) {
+      window.scrollTo({
+        top: ref.current.offsetTop - window.innerHeight / 4,
+        behavior: "smooth",
+      });
+    }
+  };
 
   const words = [
     {
       text: "Programmer",
-      className: "text-indigo-600",
+      className: "text-yellow-200",
     },
   ];
 
@@ -54,9 +65,6 @@ export default function Home() {
 
   return (
     <>
-
-    
-    
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <div className="mt-[300px] ml-[210px] text-5xl font-bold text-white">
@@ -98,19 +106,48 @@ export default function Home() {
 
       <div
         ref={webDevelopmentRef}
-        className="mt-[281px] ml-[200px] text-4xl font-bold text-white underline"
+        className="mt-[300px] text-4xl font-bold text-white underline text-center"
       >
         <h2>Web-Development</h2>
       </div>
 
-      <div className="p-10">
+      <div className="p-10 mx-auto mt-[0px]" style={{ maxWidth: "1000px" }}>
         <StickyScroll content={content} />
       </div>
 
-      <div className="m-[200px] text-white font-bold text-4xl">
-        <h3>Python-Projects</h3>
+      <div
+        ref={pythonProjectsRef}
+        className="ml-[830px] mt-[100px] text-white font-bold text-4xl mb-[500px] "
+      >
+        <h3 className="underline">Python-Projects</h3>
       </div>
 
+      <Menubar className="fixed  mt-[-2170px] ml-[1200px] pr-10 text-white ">
+        <MenubarMenu>
+          <MenubarTrigger className="text-lg">
+            <a href="#top">Home</a>
+          </MenubarTrigger>
+        </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger
+            className="text-lg"
+            onClick={() => scrollToRef(webDevelopmentRef)}
+          >
+            <a href="#webDevelopment">Web-Development</a>
+          </MenubarTrigger>
+        </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger
+            className="text-lg"
+            onClick={() => scrollToRef(pythonProjectsRef)}
+          >
+            Python-Projects
+          </MenubarTrigger>
+        </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger className="text-lg">Experience</MenubarTrigger>
+        </MenubarMenu>
+      </Menubar>
     </>
   );
 }

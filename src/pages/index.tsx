@@ -1,9 +1,18 @@
-import { MutableRefObject, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 import { Button } from "@/components/ui/button";
 import { StickyScroll } from "../components/ui/scroll-reveal";
-import { Menubar, MenubarTrigger, MenubarMenu } from "@/components/ui/menubar";
 import { RefObject } from "react";
+import { BentoGrid, BentoGridItem } from "../components/ui/BentoGridItem";
+import {
+  IconArrowWaveRightUp,
+  IconBoxAlignRightFilled,
+  IconBoxAlignTopLeft,
+  IconClipboardCopy,
+  IconFileBroken,
+  IconSignature,
+  IconTableColumn,
+} from "@tabler/icons-react";
 
 export default function Home() {
   // Refs für die Verweise zu den Abschnitten der Seite
@@ -14,16 +23,18 @@ export default function Home() {
   const scrollToRef = (ref: RefObject<HTMLDivElement> | null) => {
     if (ref && ref.current) {
       window.scrollTo({
-        top: ref.current.offsetTop - window.innerHeight / 4,
+        top: ref.current.offsetTop - window.innerHeight / 15,
         behavior: "smooth",
       });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Wenn ref null ist, scrollt zur Spitze der Seite
     }
   };
 
   const words = [
     {
       text: "Programmer",
-      className: "text-yellow-200",
+      className: "text-blue-300",
     },
   ];
 
@@ -32,11 +43,49 @@ export default function Home() {
     window.location.href = "mailto:leoradtke@outlook.de";
   };
 
+  const Skeleton = () => (
+    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
+  );
+
+  const items = [
+    {
+      title: "The Dawn of Innovation",
+      description: "Explore the birth of groundbreaking ideas and inventions.",
+      header: <Skeleton />,
+      icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: "The Digital Revolution",
+      description: "Dive into the transformative power of technology.",
+      header: <Skeleton />,
+      icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: "The Art of Design",
+      description: "Discover the beauty of thoughtful and functional design.",
+      header: <Skeleton />,
+      icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: "The Power of Communication",
+      description:
+        "Understand the impact of effective communication in our lives.",
+      header: <Skeleton />,
+      icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+      title: "The Pursuit of Knowledge",
+      description: "Join the quest for understanding and enlightenment.",
+      header: <Skeleton />,
+      icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
+    },
+  ];
+
   const content = [
     {
       title: "Get Summary",
       description:
-        "Explore our dynamic platform! Utilizing Octo AI API, we merge text and images from PDFs seamlessly. With 5000 lines of code, continual improvements ensure optimal user experience.My best Website. Here's the Link: https://ai-tool.kuehnle.me/",
+        "Explore our dynamic platform! Utilizing Octo AI API, we merge text and images from PDFs seamlessly. With 5000 lines of code, continual improvements ensure optimal user experience. My best Website. Here's the Link: https://ai-tool.kuehnle.me/",
       content: (
         <div className="h-full w-full">
           <img
@@ -111,43 +160,62 @@ export default function Home() {
         <h2>Web-Development</h2>
       </div>
 
-      <div className="p-10 mx-auto mt-[0px]" style={{ maxWidth: "1000px" }}>
+      <div className="p-10 mx-auto mt-[100px]" style={{ maxWidth: "1000px" }}>
         <StickyScroll content={content} />
       </div>
 
       <div
         ref={pythonProjectsRef}
-        className="ml-[830px] mt-[100px] text-white font-bold text-4xl mb-[500px] "
+        className="ml-[830px] mt-[150px] text-white font-bold text-4xl "
       >
         <h3 className="underline">Python-Projects</h3>
       </div>
 
-      <Menubar className="fixed  mt-[-2170px] ml-[1200px] pr-10 text-white ">
-        <MenubarMenu>
-          <MenubarTrigger className="text-lg">
-            <a href="#top">Home</a>
-          </MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger
-            className="text-lg"
+      <div
+        className="p-10  30mt-[50px] ml-[450px]"
+        style={{ maxWidth: "1000px" }}
+      >
+        <BentoGrid className="max-w-4xl mx-auto">
+          {items.map((item, i) => (
+            <BentoGridItem
+              key={i}
+              title={item.title}
+              description={item.description}
+              header={item.header}
+              icon={item.icon}
+              className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+            />
+          ))}
+        </BentoGrid>
+      </div>
+      <nav className="fixed top-0 left-0 right-0 text-white flex items-center justify-center py-4 font-bold text-[19px] ">
+        <ul className="flex space-x-11">
+          <li
+            className="cursor-pointer hover:text-blue-300 shadow-xl"
+            onClick={() => scrollToRef(null)}
+          >
+            Home
+          </li>
+          <li
+            className="cursor-pointer hover:text-blue-300 shadow-xl"
             onClick={() => scrollToRef(webDevelopmentRef)}
           >
-            <a href="#webDevelopment">Web-Development</a>
-          </MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger
-            className="text-lg"
+            Web-Development
+          </li>
+          <li
+            className="cursor-pointer hover:text-blue-300 shadow-xl"
             onClick={() => scrollToRef(pythonProjectsRef)}
           >
             Python-Projects
-          </MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger className="text-lg">Experience</MenubarTrigger>
-        </MenubarMenu>
-      </Menubar>
+          </li>
+          <li
+            className="cursor-pointer hover:text-blue-300 shadow-xl"
+            onClick={() => scrollToRef(null)}
+          >
+            Experience
+          </li>
+        </ul>
+      </nav>
     </>
   );
 }

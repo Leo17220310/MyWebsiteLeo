@@ -76,12 +76,14 @@
   }
 
   body {
-    background-color: #f0f0f0; /* Hintergrundfarbe */
-    background-image: linear-gradient(135deg, #8b9fb9, #828294);  /* Blau-Grau Verlauf */
+    background-color: #878686; /* Dunkelgraue Hintergrundfarbe */
+    background-image: linear-gradient(135deg, #02031d, #040a22); /* Dunkler Grauverlauf */
     background-size: cover; /* Das Hintergrundbild passt sich der Größe des Fensters an */
     background-position: center; /* Zentriert das Hintergrundbild */
     background-repeat: no-repeat; /* Verhindert das Wiederholen des Hintergrundbildes */
+    color: #ffffff; /* Weiße Schriftfarbe für den Kontrast */
 }
+
 
 
 div.gist div.gist-meta {

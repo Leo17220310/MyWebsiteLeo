@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { cn } from "../../lib/utils";
 import Link from "next/link";
 
 export const FloatingNav = ({
   navItems,
   className,
+  scrollToWebDev, // Callback-Funktion für das Scrollen zur Webentwicklungssektion
+  scrollToHome
 }: {
   navItems: {
     name: string;
@@ -18,8 +15,10 @@ export const FloatingNav = ({
     icon?: JSX.Element;
   }[];
   className?: string;
+  scrollToWebDev: () => void; // Typ für die Callback-Funktion
+  scrollToHome: () => void;
 }) => {
-  const { scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -37,7 +36,10 @@ export const FloatingNav = ({
       window.removeEventListener("scroll", handleScroll);
       clearTimeout(timeout);
     };
+
   }, []);
+
+  
 
   return (
     <AnimatePresence>
@@ -75,7 +77,15 @@ export const FloatingNav = ({
               <span className="hidden sm:block text-sm">{navItem.name}</span>
             </Link>
           ))}
-          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+           <button
+            className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"
+            onClick={scrollToWebDev} // Hier wird der Klick-Handler hinzugefügt
+          >
+            <span>Web-Development</span>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+          </button>
+          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full" 
+            onClick={scrollToHome}>
             <span>Home</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </button>
@@ -87,11 +97,6 @@ export const FloatingNav = ({
 
           <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
             <span>Experience</span>
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-          </button>
-
-          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-            <span>Web-Development</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </button>
         </motion.div>

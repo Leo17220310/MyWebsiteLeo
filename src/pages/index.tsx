@@ -1,4 +1,3 @@
-// IMPORTS
 import Head from 'next/head';
 import Intruduction from "../../src/sections/intruduction"
 import Socials from "../../src/sections/socials"
@@ -8,6 +7,22 @@ import NavBar from "../components/ui/floating-navbar"
 
 
 export default function Home() {
+  const scrollToWebDev = () => {
+    const webDevSection = document.getElementById("web-dev-section");
+    if (webDevSection) {
+      webDevSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
+  const scrollToHome = () => {
+    const html = document.querySelector('html');
+    if (html) {
+      html.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+
   return (
     <>
     {/* RESPONSIVE */}    
@@ -17,8 +32,8 @@ export default function Home() {
 
 
     {/* HOME INTRUDUCTION  */}
-      <div>
-      <Intruduction />
+      <div> 
+        <Intruduction />
       </div>
 
 
@@ -34,16 +49,20 @@ export default function Home() {
       </div>
 
       {/* WEB DEV INFORMATION */}
-      <div>
+      <div id="web-dev-section"> 
         <WebDev />
       </div>
 
       <div>
-       <NavBar navItems={[]} />
+        {/* Home-Schaltfläche hinzugefügt */}
+        <button onClick={scrollToHome}>Go to Home</button>
+      </div>
+
+      <div>
+        {/* Navbar hinzugefügt */}
+       <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} /> 
       </div>
   
-
-     
     </>
   );
 }

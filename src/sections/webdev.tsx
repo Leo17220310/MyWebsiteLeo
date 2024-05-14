@@ -14,8 +14,6 @@ const WebDev = () => {
 
 
 
-
-
   return (
     <>
       <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto mt-[100px] mb-[100px]">
@@ -82,7 +80,7 @@ const WebDev = () => {
                     data-hs-tab="#tabs-with-card-2"
                     aria-controls="tabs-with-card-2"
                     role="tab"
-                    onClick={() => handleTabClick(2)}
+                    onClick={() => handleTabClicks(2)}
                   >
                     <span className="flex">
                       <svg
@@ -120,7 +118,7 @@ const WebDev = () => {
                     data-hs-tab="#tabs-with-card-3"
                     aria-controls="tabs-with-card-3"
                     role="tab"
-                    onClick={() => handleTabClick(3)}
+                    onClick={() => handleTabClicks(3)}
                   >
                     <span className="flex">
                       <svg
@@ -241,7 +239,4 @@ const WebDev = () => {
 };
 
 export default WebDev;
-function handleTabClick(arg0: number) {
-  throw new Error("Function not implemented.");
-}
 

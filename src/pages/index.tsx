@@ -4,6 +4,7 @@ import Socials from "../../src/sections/socials"
 import BgAnimation from "../../src/sections/backgroundAnimation"
 import WebDev from "../../src/sections/webdev"
 import NavBar from "../components/ui/floating-navbar"
+import Python from "../sections/python"
 
 
 export default function Home() {
@@ -61,6 +62,10 @@ export default function Home() {
       <div>
         {/* Navbar hinzugefügt */}
        <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} /> 
+      </div>
+
+      <div className='mb-[200px]'>
+        <Python></Python>
       </div>
   
     </>

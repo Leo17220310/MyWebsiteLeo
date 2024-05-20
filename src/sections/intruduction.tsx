@@ -13,7 +13,7 @@ const Intruductions = () => {
   //CONTACT BUTTON FUNKTION
 
   const handleContactMeClick = () => {
-    window.location.href = "mailto:leoradtke@outlook.de";
+    window.location.href = "mailto:leo.radtke.info@gmail.com";
   };
 
   return (

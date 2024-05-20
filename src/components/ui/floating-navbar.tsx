@@ -7,7 +7,9 @@ export const FloatingNav = ({
   navItems,
   className,
   scrollToWebDev, // Callback-Funktion für das Scrollen zur Webentwicklungssektion
-  scrollToHome
+  scrollToHome,
+  scrollToPython,
+  scrollToExperience
 }: {
   navItems: {
     name: string;
@@ -17,6 +19,8 @@ export const FloatingNav = ({
   className?: string;
   scrollToWebDev: () => void; // Typ für die Callback-Funktion
   scrollToHome: () => void;
+  scrollToPython: () => void;
+  scrollToExperience: () => void;
 }) => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
@@ -78,25 +82,27 @@ export const FloatingNav = ({
             </Link>
           ))}
            <button
-            className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"
-            onClick={scrollToWebDev} // Hier wird der Klick-Handler hinzugefügt
+            className="hover:bg-gray-200 border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"
+            onClick={scrollToHome} // Hier wird der Klick-Handler hinzugefügt
           >
-            <span>Web-Development</span>
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-          </button>
-          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full" 
-            onClick={scrollToHome}>
             <span>Home</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </button>
-
-          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-            <span>Pyhton</span>
+          <button className="hover:bg-gray-200 border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full" 
+            onClick={scrollToWebDev}>
+            <span>Web-Dev</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </button>
 
-          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+          <button className="hover:bg-gray-200 border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"
+           onClick={scrollToExperience}>
+            
             <span>Experience</span>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+          </button>
+
+          <button className=" hover:bg-gray-200 border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full" onClick={scrollToPython} >
+            <span>Python</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </button>
         </motion.div>

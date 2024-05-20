@@ -20,7 +20,7 @@ const WebDev = () => {
         <div className="relative p-6 md:p-16">
           <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
             <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
-            <h2 className="text-2xl text-gray-800 font-bold sm:text-3xl dark:text-neutral-200" id="web-dev-section">
+            <h2 className="text-2xl text-gray-800 font-bold sm:text-3xl dark:text-neutral-200 drop-shadow-xl underline md:underline-offset-4" id="web-dev-section">
                 My best websites projects
               </h2>
 

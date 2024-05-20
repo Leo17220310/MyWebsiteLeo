@@ -1,156 +1,457 @@
-const python = () => {
+import React, { useState } from "react";
+import hljs from "highlight.js/lib/core";
+import python from "highlight.js/lib/languages/python";
+import "highlight.js/styles/default.css";
+import "tailwindcss/tailwind.css";
+import { Button } from "@/components/ui/button";
+
+hljs.registerLanguage("python", python);
+
+const Python: React.FC = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [code, setCode] = useState("");
+
+  const handleSidebar = (codeSnippet: string) => {
+    setCode(codeSnippet);
+    setSidebarOpen(true);
+  };
+
+  const pythonCodeSamples = {
+    nft: `
+    import json
+    import yaml
+    import requests
+    
+    
+    #'secrets.yaml', 'r'
+    # Load the secrets.yaml file "C:\Users\Admin\OneDrive\LeoPython\Python mit Manuel\PythonKursMitManuel\Lektion13\nft_api\secrets.yaml"
+    with open(r'C:\Users\Admin\OneDrive\Python mit Manuel\leo_git_tutorial\PythonKursMitManuel\Lektion17\secrets.yaml') as file:
+        secrets = yaml.safe_load(file)
+    
+    # Access the API key
+    nftgo_api_key = secrets['nftgo_key']
+    os_api_key = secrets['os_key']
+    
+    
+    def get_addressen_liste() :
+       
+       # öffne JSON datei  addressen.json", "r"
+       with open(r"C:\Users\Admin\OneDrive\Python mit Manuel\leo_git_tutorial\PythonKursMitManuel\Lektion17\addressen.json") as file: 
+          data = file.read()
+        
+       data_dict = json.loads(data)
+       projekte = ["BORED_APES_ADDRESS", "PORSCHE_ADDRESS", "CRYPTOPUNKS_ADDRESS", "PUMA", "DOODLES"]
+       liste = [data_dict[key] for key in projekte]
+       
+       return liste
+    
+    
+    def ng_get_info_from_collection(adresse, nft_collections_df):
+    
+        url = f"https://data-api.nftgo.io/eth/v1/collection/{adresse}/info" #application/json
+    
+        headers = { 
+            "accept":"application/json",
+            "X-API-KEY": nftgo_api_key
+        }
+    
+        response = requests.get(url, headers=headers)
+        #python_dictionary = response.json() 
+        response_text = response.text
+        python_dictionary = json.loads(response_text)
+        
+        # Daten als Variablen speichern
+        blockchain = python_dictionary["blockchain"] 
+        Twitter =  python_dictionary ["twitter_url"]
+        Official_Website = python_dictionary ["official_website_url"]
+        Name =  python_dictionary["name"]
+        
+        # Daten in Dataframe abspeichern
+        nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'Blockchain'] = blockchain
+        nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'Twitter'] = Twitter
+        nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'Official Website'] = Official_Website
+        nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'Name'] = Name
+    
+    
+        
+    def os_get_collection_stats(collection_slug, addresse, nft_collections_df):
+        
+        url = f"https://api.opensea.io/api/v1/collection/{collection_slug}/stats"
+    
+        headers = {"accept": "application/json" , 
+                   "X-API-KEY": os_api_key 
+        }             
+    
+        response = requests.get(url, headers=headers)
+        res = response.json()
+    
+        # Daten als Variablen speichern
+        avg_price = res["stats"]["average_price"]
+        rounded_avg_price = round(avg_price, 2)
+    
+        # Daten in Dataframe abspeichern
+        nft_collections_df.loc[nft_collections_df["Collection Adresse"] == addresse, "avg_price"] = rounded_avg_price
+    
+    
+        
+    def os_get_collection_stats(collection_slug, addresse, nft_collections_df):
+        
+        url = f"https://api.opensea.io/api/v1/collection/{collection_slug}/stats"
+    
+        headers = {"accept": "application/json" , 
+                   "X-API-KEY": os_api_key 
+        }             
+    
+        response = requests.get(url, headers=headers)
+        res = response.json()
+    
+        # Daten als Variablen speichern
+        avg_price = res["stats"]["average_price"]
+        rounded_avg_price = round(avg_price, 2)
+    
+        # Daten in Dataframe abspeichern
+        nft_collections_df.loc[nft_collections_df["Collection Adresse"] == addresse, "avg_price"] = rounded_avg_price
+        
+    
+    
+    def beschreibungstext(adresse, nft_collections_df): 
+        namen = nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'Name'].values[0]
+        blockchain = nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'Blockchain'].values[0]
+        total_supply = nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'total_supply'].values[0]
+        num_owners =  nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'num_owners'].values[0]
+        floor_price_usd =  nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'floor_price_usd'].values[0]
+        floor_price_usd = round(float(floor_price_usd), 2)
+        twitter = nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'Twitter'].values[0]
+        website = nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'Official Website'].values[0]
+        
+        
+        beschreibung = f'''
+    Die NFT collection mit dem Namen {namen} wurde auf der Blockchain {blockchain} veröffentlicht. 
+    Die Collection bestehet aus {total_supply} NFTS und es gibt aktuell {num_owners} Besitzer. 
+    Den billigsten NFT kann man aktuell für {floor_price_usd} USD kaufen. 
+    Die offizielle Website ist {website} und der Twitter Link ist {twitter}.
+    '''
+        return beschreibung
+    
+    def ng_get_metrics_from_collection(adresse, nft_collections_df):
+    
+        url= f"https://data-api.nftgo.io/eth/v1/collection/{adresse}/metrics"
+    
+        headers = {
+            "accept": "application/json",
+            "X-API-KEY": nftgo_api_key
+        }
+    
+        response = requests.get(url, headers=headers)
+        python_dictionary = response.json()
+    
+        # Daten als Variablen speichern
+        num_owners = python_dictionary["holder_num"]
+        total_supply = python_dictionary["total_supply"]
+        floor_price_eth = python_dictionary["floor_price"]["value"]
+        floor_price_usd = python_dictionary["floor_price"]["usd"]
+    
+        # Daten in Dataframe abspeichern
+        nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'num_owners'] = num_owners
+        nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'total_supply'] =  total_supply
+        nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'floor_price_eth'] = floor_price_eth 
+        nft_collections_df.loc[nft_collections_df['Collection Adresse'] == adresse, 'floor_price_usd'] = floor_price_usd            
+    
+    
+    
+    
+    
+    
+    `,
+    search: `
+    # Suchalgorithmen 
+    import random as rd
+    
+    
+    # 1. Lineare Suche
+    def lineareSuche(kundendaten , gesuchter_kunde):
+        for kunde in kundendaten:
+            if kunde == gesuchter_kunde:
+                return "Der Kunde " + gesuchter_kunde + " wurde gefunden"
+        return "Der Kunde " + gesuchter_kunde + " wurde nicht gefunden"
+        
+    def test_lineareSuche():    
+        kunde = "Niclas"
+        kundendaten = ["Alfred", "Beate", "Klaus", "Hannah", "Leo", "Sebastian", "Ingrid", "Johanna", "Stefan", "Niclas"]
+        ergebnis = lineareSuche(kundendaten, kunde)
+        print(ergebnis)
+    
+    test_lineareSuche()
+    
+    # Eingabelänge n (n = 10)
+    # Best case O(1)
+    # Worst case O(n)
+    
+    
+    # 2. Binäre Suche
+    # Voraussetzung: sortierte Daten
+    def binäreSuche(liste, gesuchtesElement):
+        links = 0
+        rechts = len(liste) - 1
+        mitte =  len(liste) // 2
+        
+        while links < rechts:
+            if liste[mitte] == gesuchtesElement:
+                return gesuchtesElement
+            elif gesuchtesElement > liste[mitte]:
+                # nur noch rechten Teil anschauen
+                links = mitte + 1
+                mitte = (links + rechts) // 2
+            else:
+                #nur noch linken Teil anschauen
+                rechts = mitte - 1
+                mitte = (links + rechts) // 2
+             
+    
+    
+    # Wenn gesuchtes Element in Liste, dann gesuchtes Element (Zahl) zurückgeben. 
+    # Falls nicht, -1 zurückgeben.
+    def test_binäreSuche():
+        gesuchtesElement = 100 #rd.randint(50, 1000)
+        zahlen = list(range(50, 1000))
+        res = binäreSuche(zahlen, gesuchtesElement)
+        if res == gesuchtesElement:
+            print("Wurde gefunden:", res)
+        else:
+            print("Das gesuchtes Element:", gesuchtesElement, "wurde nicht gefunden!")
+    
+    
+    # Eingabelänge n (n = 10)
+    # Best case O(1)
+    # Worst case O(log n)
+        
+    
+    `,
+    tree: `
+    import turtle
+    import random
+    from listen import myColorList
+    
+    def draw_christmas_tree():
+        turtle.fillcolor(myColorList[8])
+        turtle.begin_fill()
+        turtle.penup()
+        turtle.goto(-200, -200)
+        turtle.pendown()
+        turtle.pensize(10)
+        turtle.pencolor(myColorList[8])
+        turtle.goto(0, 250)
+        turtle.goto(200, -200)
+        turtle.goto(-200, -200)
+        turtle.end_fill()
+    
+    
+    
+    def draw_tree_trunk():
+        turtle.fillcolor(myColorList[3])
+        turtle.begin_fill()
+        turtle.pencolor(myColorList[3])
+        turtle.penup()
+        turtle.goto(-25, -200)
+        turtle.pendown()
+        turtle.goto(-25, -300)
+        turtle.goto(25, -300)
+        turtle.goto(25, -200)
+        turtle.goto(-25, -200)
+        turtle.end_fill()
+    
+    def draw_baubles():
+        x1 = -200
+        x2 = 240
+        y = -220
+        for _ in range(1, 8):
+            for x_coordinate in range(x1, x2, 80):
+                color = random.choice(myColorList)
+                turtle.pencolor(color)
+                turtle.fillcolor(color)
+                turtle.penup()
+                turtle.goto(x_coordinate, y)
+                turtle.pendown()
+                turtle.begin_fill()
+                turtle.circle(14)
+                turtle.end_fill()
+            x1 += 40
+            x2 -= 40
+            y += 80
+    
+    def draw_star():
+        turtle.penup()
+        turtle.goto(-20, 260)
+        turtle.pendown()
+        turtle.fillcolor("yellow")
+        turtle.pencolor("yellow")
+        turtle.begin_fill()
+        for _ in range(5): 
+            turtle.forward(40) 
+            turtle.right(144)
+        turtle.end_fill()
+    
+    def draw_text():
+        turtle.penup()
+        turtle.goto(0, -350)
+        turtle.pendown()
+        turtle.write("Frohe Weihnachten!", align="center", font=("Comic Sans MS", 30, "normal"))
+    
+    # Setup
+    turtle.setup(800, 800)
+    turtle.title("Frohe Weihnachten!")
+    turtle.speed(50)
+    turtle.bgcolor(myColorList[221])
+    
+    # Drawing
+    draw_christmas_tree()
+    draw_tree_trunk()
+    draw_baubles()
+    draw_star()
+    draw_text()
+    
+    
+    # Finishing
+    turtle.hideturtle()
+    turtle.exitonclick()
+    
+    # Die Sachen  für Turtel : 
+    # https://mange.ifrn.edu.br/python/pyturtle-cheat-sheets.pdf
+    
+    `,
+  };
+
   return (
     <>
       <div className="bg-gray-100 p-6 md:p-16 rounded-xl shadow-lg dark:bg-neutral-800 m-[200px]">
-        <h1 className="text-3xl text-black font-bold ml-[47px]">Python Experience</h1>
+        <h1 className="text-3xl text-black font-bold ml-[47px] underline  ">
+          Python Experience
+        </h1>
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+            {/* NFT Collections Card */}
+            <div className="group flex  flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
               <div className="h-52 flex flex-col justify-center items-center bg-blue-200 rounded-t-xl">
-              <img
-                  src="apiscrape.png"
-                  alt="Atlassian"
-                  className="w-[210px] h-[210px] ml-[-4px]"
+                <img
+                  src="collections.png"
+                  alt="NFT Collections"
+                  className="w-[500px] h-[210px] rounded-t-xl"
                 />
-               
               </div>
               <div className="p-4 md:p-6">
                 <span className="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-blue-500">
                   API
                 </span>
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
-                    NFT collections 
+                  NFT collections
                 </h3>
                 <p className="mt-3 text-gray-500 dark:text-neutral-500">
-                This script interfaces with an API to provide detailed insights into individual NFT collections, facilitating informed analysis and exploration of the NFT market.
+                  This script interfaces with an API to provide detailed
+                  insights into individual NFT collections, facilitating
+                  informed analysis and exploration of the NFT market.
                 </p>
               </div>
               <div className="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                <a
+                <button
                   className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-                  href="#"
+                  onClick={() => handleSidebar(pythonCodeSamples.nft)}
                 >
                   View sample
-                </a>
-            
+                </button>
               </div>
             </div>
 
+            {/* Search Algorithms Card */}
             <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
               <div className="h-52 flex flex-col justify-center items-center bg-blue-200 rounded-t-xl">
-
-              <img
-                  src="apiscrape.png"
-                  alt="Atlassian"
-                  className="w-[210px] h-[210px] ml-[-4px]"
+                <img
+                  src="search.png"
+                  alt="Search Algorithms"
+                  className="w-[500px] h-[210px] rounded-t-xl"
                 />
-
-                    <radialGradient
-                      id="paint0_radial_2204_541"
-                      cx="0"
-                      cy="0"
-                      r="1"
-                      gradientUnits="userSpaceOnUse"
-                      gradientTransform="translate(28.0043 29.3944) scale(21.216 19.6102)"
-                    >
-                      <stop offset="0%" stop-color="#FFB900" />
-                      <stop offset="0.6" stop-color="#F95D8F" />
-                      <stop offset="0.999" stop-color="#F95353" />
-                    </radialGradient>
-                    <clipPath id="clip0_2204_541">
-                      <rect
-                        width="32"
-                        height="29.5808"
-                        fill="white"
-                        transform="translate(12 13.2096)"
-                      />
-                    </clipPath>
-           
               </div>
               <div className="p-4 md:p-6">
                 <span className="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-rose-500">
                   Search
                 </span>
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
-                  Asana
+                  Algorithms
                 </h3>
                 <p className="mt-3 text-gray-500 dark:text-neutral-500">
-                  Track tasks and projects, use agile boards, measure progress.
+                  This Python application demonstrates both binary search and
+                  linear search algorithms for efficiently locating elements in
+                  a list.
                 </p>
               </div>
               <div className="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                <a
+                <button
                   className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-                  href="#"
+                  onClick={() => handleSidebar(pythonCodeSamples.search)}
                 >
                   View sample
-                </a>
-            
+                </button>
               </div>
             </div>
 
+            {/* Turtle Christmas Tree Card */}
             <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
               <div className="h-52 flex flex-col justify-center items-center bg-amber-500 rounded-t-xl">
-                <svg
-                  className="size-28"
-                  width="56"
-                  height="56"
-                  viewBox="0 0 56 56"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="56" height="56" rx="10" fill="white" />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M23.7326 11.968C21.9637 11.9693 20.5321 13.4049 20.5334 15.1738C20.5321 16.9427 21.965 18.3782 23.7339 18.3795H26.9345V15.1751C26.9358 13.4062 25.5029 11.9706 23.7326 11.968C23.7339 11.968 23.7339 11.968 23.7326 11.968M23.7326 20.5184H15.2005C13.4316 20.5197 11.9987 21.9553 12 23.7242C11.9974 25.4931 13.4303 26.9286 15.1992 26.9312H23.7326C25.5016 26.9299 26.9345 25.4944 26.9332 23.7255C26.9345 21.9553 25.5016 20.5197 23.7326 20.5184V20.5184Z"
-                    fill="#36C5F0"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M44.0001 23.7242C44.0014 21.9553 42.5684 20.5197 40.7995 20.5184C39.0306 20.5197 37.5977 21.9553 37.599 23.7242V26.9312H40.7995C42.5684 26.9299 44.0014 25.4944 44.0001 23.7242ZM35.4666 23.7242V15.1738C35.4679 13.4062 34.0363 11.9706 32.2674 11.968C30.4985 11.9693 29.0656 13.4049 29.0669 15.1738V23.7242C29.0643 25.4931 30.4972 26.9286 32.2661 26.9312C34.035 26.9299 35.4679 25.4944 35.4666 23.7242Z"
-                    fill="#2EB67D"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M32.2661 44.0322C34.035 44.0309 35.4679 42.5953 35.4666 40.8264C35.4679 39.0575 34.035 37.622 32.2661 37.6207H29.0656V40.8264C29.0642 42.594 30.4972 44.0295 32.2661 44.0322ZM32.2661 35.4804H40.7995C42.5684 35.4791 44.0013 34.0436 44 32.2747C44.0026 30.5058 42.5697 29.0702 40.8008 29.0676H32.2674C30.4985 29.0689 29.0656 30.5045 29.0669 32.2734C29.0656 34.0436 30.4972 35.4791 32.2661 35.4804V35.4804Z"
-                    fill="#ECB22E"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 32.2746C11.9987 34.0435 13.4316 35.479 15.2005 35.4804C16.9694 35.479 18.4024 34.0435 18.401 32.2746V29.0688H15.2005C13.4316 29.0702 11.9987 30.5057 12 32.2746ZM20.5334 32.2746V40.825C20.5308 42.5939 21.9637 44.0295 23.7326 44.0321C25.5016 44.0308 26.9345 42.5952 26.9332 40.8263V32.2772C26.9358 30.5083 25.5029 29.0728 23.7339 29.0702C21.9637 29.0702 20.5321 30.5057 20.5334 32.2746C20.5334 32.2759 20.5334 32.2746 20.5334 32.2746Z"
-                    fill="#E01E5A"
-                  />
-                </svg>
+                <img
+                  src="tree.png"
+                  alt="Turtle Christmas Tree"
+                  className="w-[500px] h-[210px] rounded-t-xl"
+                />
               </div>
               <div className="p-4 md:p-6">
-                <span className="block mb-1 text-xs font-semibold uppercase text-amber-500">
-                  Slack API
+                <span className="block mb-1 text-xs font-semibold uppercase text-blue-600">
+                  Turtle
                 </span>
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
-                  Slack
+                  Christmas Tree
                 </h3>
                 <p className="mt-3 text-gray-500 dark:text-neutral-500">
-                  Email collaboration and email service desk made easy.
+                  My Python script uses the Turtle graphics module to draw a
+                  detailed Christmas tree, complete with decorations.
                 </p>
               </div>
               <div className="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                <a
+                <button
                   className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-                  href="#"
+                  onClick={() => handleSidebar(pythonCodeSamples.tree)}
                 >
                   View sample
-                </a>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Sidebar */}
+      {sidebarOpen && (
+        <div className="fixed top-0 right-0 w-1/4 h-full bg-white bg-opacity-25 backdrop-blur-lg shadow-lg overflow-y-auto transition-transform transform translate-x-0  ">
+          <div className="p-4">
+          <Button
+             className="mb-4 p-2 bg-blue-300 text-black rounded hover:bg-blue-400 absolute left-0 top-0 m-4 h-15 w-15 bg-opacity-50 hover:bg-opacity-80"
+             onClick={() => setSidebarOpen(false)}
+          >
+            Close
+          </Button>
+              Close
+          
+            <pre>
+              <code
+                className="python text-black "
+                dangerouslySetInnerHTML={{
+                  __html: hljs.highlight(code, { language: "python" }).value,
+                }}
+              />
+            </pre>
+          </div>
+        </div>
+      )}
     </>
   );
 };
 
-export default python;
+export default Python;

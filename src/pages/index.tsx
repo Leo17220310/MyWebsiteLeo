@@ -11,8 +11,26 @@ import React from "react";
 import Experience from "../sections/experience";
 import { useEffect, useState } from "react";
 import Linie from "../sections/linie";
+import Pricing from "../sections/pricing";
 
 export default function Home() {
+
+  useEffect(() => {
+    const checkDevice = () => {
+      if (window.innerWidth < 1024) {
+        alert("Diese Website ist nur auf PCs verfügbar. Bitte besuchen Sie uns auf einem Desktop-Gerät.");
+        // Alternativ können Sie auch eine Weiterleitung durchführen
+         window.location.href = "https://leo17220310.github.io/Portfolio/";
+      }
+    };
+
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+
+    return () => {
+      window.removeEventListener('resize', checkDevice);
+    };
+  }, []);
 
   const scrollToWebDev = () => {
     const webDevSection = document.getElementById("web-dev-section");
@@ -43,6 +61,13 @@ export default function Home() {
     }
   };
 
+  const scrollToPricing = () => {
+    const python = document.getElementById("pricing-section");
+    if (python) {
+      python.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
 
   return (
     <>
@@ -60,7 +85,7 @@ export default function Home() {
 
 
     {/* HOME INTRUDUCTION  */}
-      <div> 
+      <div className='mb-[200px]'> 
         <Intruduction />
       </div>
 
@@ -77,23 +102,26 @@ export default function Home() {
         <BgAnimation/>
       </div>
 
-      {/* WEB DEV INFORMATION */}
-      <div id="web-dev-section"  > 
-        <WebDev />
-      </div>
-
-      <div className='mt-[-100px]'>
-        <Linie></Linie>
-      </div>
-
-      <div  className='mb-[200px]' id="experience-section">
+      <div   id="experience-section">
         <Experience />
       </div>
 
-      <div className='mt-[-150px]'>
-        <Linie></Linie>
+      {/* WEB DEV INFORMATION */}
+      <div id="web-dev-section" className='mb-[200px] mt-[200px]'  > 
+        <WebDev />
       </div>
 
+      <div className='mb-[200px]' id="python-section">
+        <Python></Python>
+      </div>
+
+
+     
+      <div className='mb-[200px]' id="pricing-section">
+       <Pricing></Pricing>
+      </div>
+      
+   
 
       <div>
         {/* Home-Schaltfläche hinzugefügt */}
@@ -102,12 +130,11 @@ export default function Home() {
 
       <div>
         {/* Navbar hinzugefügt */}
-       <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} scrollToPython={scrollToPython} scrollToExperience={scrollToExperience}/> 
+       <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} scrollToPython={scrollToPython} scrollToExperience={scrollToExperience} scrollToPricing={scrollToPricing}/> 
       </div>
 
-      <div className='mt-[-180px]' id="python-section">
-        <Python></Python>
-      </div>
+     
+     
 
     
 

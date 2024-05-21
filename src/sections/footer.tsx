@@ -131,13 +131,11 @@ const Footer = () => {
                 <p>
                   <a
                     className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
-                    href="#"
+                    href="#pricing-section"
                   >
-                   Your Website
+                  Get your Website
                   </a>
-                  <span className="inline ms-1 text-xs bg-blue-700 text-white py-1 px-2 rounded-lg ml-[10px]">
-                   Cooming Soon
-                  </span>
+              
                 </p>
                 <p>
                   <a
@@ -153,7 +151,7 @@ const Footer = () => {
                 <p>
                   <a
                     className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
-                    href="#"
+                    href="mailto:leo.radtke.info@gmail.com"
                   >
                     Contact
                   </a>{" "}

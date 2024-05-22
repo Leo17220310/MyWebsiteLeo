@@ -1,11 +1,6 @@
 import { useState } from "react";
 
 const Experience = () => {
-  const [likesCount, setLikesCount] = useState(0);
-
-  const likes = () => {
-    setLikesCount((prevCount) => prevCount + 1);
-  };
   return (
     <>
       <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
@@ -60,7 +55,7 @@ const Experience = () => {
                     <figure className="relative w-full h-72 sm:h-96 lg:h-full">
                       <img
                         className="size-full absolute top-0 start-0 object-cover rounded-xl"
-                        src="ich.png.jpg"
+                        src="leooo.png"
                         alt="Image Description"
                       ></img>
                     </figure>
@@ -135,8 +130,6 @@ const Experience = () => {
                   adventure, connection, and personal fulfillment, shaping me
                   into the person I aspire to be.
                 </p>
-
-               
               </div>
             </div>
           </div>
@@ -144,7 +137,10 @@ const Experience = () => {
           <div className="lg:col-span-1 lg:w-full lg:h-full lg:bg-gradient-to-r lg:from-gray-50 lg:via-transparent lg:to-transparent dark:from-neutral-800">
             <div className="sticky top-0 start-0 py-8 lg:ps-8">
               <div className="group flex items-center gap-x-3 border-b border-gray-200 pb-8 mb-8 dark:border-neutral-700">
-                <a className="block flex-shrink-0" href="https://www.instagram.com/leo22031017/">
+                <a
+                  className="block flex-shrink-0"
+                  href="https://www.instagram.com/leo22031017/"
+                >
                   <img
                     className="size-10 rounded-full"
                     src="ichfreizeit.png.jpg"
@@ -152,7 +148,10 @@ const Experience = () => {
                   ></img>
                 </a>
 
-                <a className="group grow block" href="https://www.instagram.com/leo22031017/">
+                <a
+                  className="group grow block"
+                  href="https://www.instagram.com/leo22031017/"
+                >
                   <h5 className="group-hover:text-gray-600 text-sm font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
                     leo22031017
                   </h5>
@@ -184,17 +183,25 @@ const Experience = () => {
                         <line x1="19" x2="19" y1="8" y2="14" />
                         <line x1="22" x2="16" y1="11" y2="11" />
                       </svg>
-                     <a href="https://www.instagram.com/leo22031017/">Follow Instagram</a> 
+                      <a href="https://www.instagram.com/leo22031017/">
+                        Follow Instagram
+                      </a>
                     </button>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-6">
-                <a className="group flex items-center gap-x-6" href="https://summarizer.kuehnle.me/">
+                <h5 className="text-xl font-bold text-gray-800 dark:text-neutral-200 underline">
+                  Websites
+                </h5>
+                <a
+                  className="group flex items-center gap-x-6"
+                  href="https://summarizer.kuehnle.me/"
+                >
                   <div className="grow">
                     <span className="text-sm font-bold text-gray-800 group-hover:text-blue-600 dark:text-neutral-200 dark:group-hover:text-blue-500">
-                      Summarizer AI Website from Leo Radtke:
+                      Summarizer AI Website :
                     </span>
                   </div>
 
@@ -207,10 +214,13 @@ const Experience = () => {
                   </div>
                 </a>
 
-                <a className="group flex items-center gap-x-6" href="https://leo17220310.github.io/Portfolio/">
+                <a
+                  className="group flex items-center gap-x-6"
+                  href="https://leo17220310.github.io/Portfolio/"
+                >
                   <div className="grow">
                     <span className="text-sm font-bold text-gray-800 group-hover:text-blue-600 dark:text-neutral-200 dark:group-hover:text-blue-500">
-                      My Old Portfolio
+                      My Old Portfolio :
                     </span>
                   </div>
 
@@ -226,7 +236,7 @@ const Experience = () => {
                 <a className="group flex items-center gap-x-6" href="#">
                   <div className="grow">
                     <span className="text-sm font-bold text-gray-800 group-hover:text-blue-600 dark:text-neutral-200 dark:group-hover:text-blue-500">
-                      My Portfolio now
+                      My Portfolio now :
                     </span>
                   </div>
 
@@ -237,6 +247,26 @@ const Experience = () => {
                       alt="Image Description"
                     ></img>
                   </div>
+                </a>
+              
+                <hr></hr>
+                <br></br>
+                <h5 className="text-xl font-bold text-gray-800 dark:text-neutral-200 underline">
+                  GitHub Repositorys
+                </h5>
+                <br></br>
+                
+                <a
+                  href="https://github.com/m-kuehnle/summarizer"
+                  className="text-black  hover:text-blue-600"
+                  target="_blank"
+                >
+                  <span className="text-black font-medium">
+                     Summarizer AI Website :
+                    <br></br>
+                  </span>{" "}
+                  <br></br>
+                  <span className="">https://github.com/m-kuehnle/summarizer/</span>{" "}
                 </a>
               </div>
             </div>

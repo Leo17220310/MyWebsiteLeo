@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const WebDev = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -7,12 +8,9 @@ const WebDev = () => {
     setActiveTab(tabNumber);
   };
 
-
-
-
-
-
-
+  const handleContact = () => {
+    window.location.href = "mailto:leo.radtke.info@gmail.com";
+  };
 
   return (
     <>
@@ -20,9 +18,22 @@ const WebDev = () => {
         <div className="relative p-6 md:p-16">
           <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
             <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
-            <h2 className="text-2xl text-gray-800 font-bold sm:text-3xl dark:text-neutral-200 drop-shadow-xl underline md:underline-offset-4" id="web-dev-section">
-                My best websites projects
-              </h2>
+              <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
+                <h2 className="text-3xl lg:text-4xl text-gray-800 font-mediumbold dark:text-neutral-200 mr-[100px]">
+                  My best and up to date
+                  <span className="text-blue-300 font-bold"> Website </span>
+                  Projects{" "}
+                </h2>
+                <div style={{ position: "relative" }}>
+                  <Button
+                    className=" mr-[100px] mt-[20px] text-black overlapping-button"
+                    variant="outline"
+                    onClick={handleContact}
+                  >
+                    Contact Me
+                  </Button>
+                </div>
+              </div>
 
               <div className="ml-[-70px]">
                 <nav
@@ -228,7 +239,8 @@ const WebDev = () => {
               </div>
             </div>
           </div>
-
+          <div style={{ position: "relative" }}>
+          </div>{" "}
           <div className="absolute inset-0 grid grid-cols-12 size-full">
             <div className="col-span-full lg:col-span-7 lg:col-start-6 bg-gray-100 w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full dark:bg-neutral-800"></div>
           </div>
@@ -239,4 +251,3 @@ const WebDev = () => {
 };
 
 export default WebDev;
-

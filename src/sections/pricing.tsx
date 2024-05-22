@@ -39,7 +39,7 @@ const Pricing = () => {
                       </span>
                     
                       <span className="ms-3 text-gray-500 dark:text-neutral-500">
-                        Euros / month
+                        Euros / monthly
                       </span>
                     </div>
 
@@ -318,7 +318,7 @@ const Pricing = () => {
                             </svg>
                           </span>
                           <span className="text-gray-800 dark:text-neutral-200">
-                            1 free 
+                            1 free month
                           </span>
                         </li>
                       </ul>

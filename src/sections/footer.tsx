@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const copyToClipboard = (text: string) => {
     var tempInput = document.createElement("input");
     tempInput.value = text;
@@ -9,9 +13,14 @@ const Footer = () => {
     alert("Snapchat-Benutzername wurde in die Zwischenablage kopiert: " + text);
   };
 
-  const dataProtection = () => {
-    alert("No data from this website may be used without permission. Ask me for permission and contact me.");
+  const handleImpressum = () => {
+    setIsModalOpen(true);
   };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <footer className="mt-auto bg-gray-900 w-full dark:bg-neutral-950">
@@ -100,7 +109,7 @@ const Footer = () => {
                     className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
                     href="mailto:leo.radtke.info@gmail.com"
                   >
-                    Managment E-mail
+                    Management E-mail
                   </a>
                 </p>
                 <p>
@@ -114,9 +123,9 @@ const Footer = () => {
                 <p>
                   <a
                     className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
-                    onClick={() => dataProtection()}
+                    onClick={handleImpressum}
                   >
-                    Data protection
+                    Impressum & Privacy
                   </a>
                 </p>
               </div>
@@ -133,9 +142,8 @@ const Footer = () => {
                     className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
                     href="#pricing-section"
                   >
-                  Get your Website
+                    Get your Website
                   </a>
-              
                 </p>
                 <p>
                   <a
@@ -145,7 +153,7 @@ const Footer = () => {
                     Linktree
                   </a>
                   <span className="inline ms-1 text-xs bg-blue-700 text-white py-1 px-2 rounded-lg ml-[10px]">
-                   Cooming Soon
+                    Coming Soon
                   </span>
                 </p>
                 <p>
@@ -154,13 +162,13 @@ const Footer = () => {
                     href="mailto:leo.radtke.info@gmail.com"
                   >
                     Contact
-                  </a>{" "}
+                  </a>
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="  bottom-0 left-0">
+          <div className="bottom-0 left-0">
             <div className="ml-[-270px] ">
               <p className="text-sm text-gray-400 dark:text-neutral-400 mb-[-70px]">
                 All content on this website is copyrighted © 2024 Leo Radtke.
@@ -186,14 +194,16 @@ const Footer = () => {
               </a>
               <a
                 className="size-10 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-white hover:bg-white/10 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-1 focus:ring-gray-600"
-                href="https://www.instagram.com/leo22031017/" target="_blank"
+                href="https://www.instagram.com/leo22031017/"
+                target="_blank"
               >
-                <img src="instagram.png" className="w-5 h-5" ></img>
+                <img src="instagram.png" className="w-5 h-5" alt="Instagram" />
               </a>
 
               <a
                 className="size-10 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-white hover:bg-white/10 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-1 focus:ring-gray-600"
-                href="https://github.com/Leo17220310" target="_blank"
+                href="https://github.com/Leo17220310"
+                target="_blank"
               >
                 <svg
                   className="flex-shrink-0 size-4"
@@ -210,6 +220,63 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+
+      {isModalOpen && (
+        <>
+          <div className="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40 ">
+            <button
+              type="button"
+              className=" flex justify-center items-center size-7 text-sm font-semibold rounded-lg border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-transparent dark:hover:bg-neutral-700"
+              onClick={closeModal} // Add this onClick handler
+            >
+              <span className="sr-only">Close</span>
+              <svg
+                className="flex-shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+            <div className="text-white text-3xl font-bold text-center mb-4">
+              Imprint
+            </div>
+            <div className="text-center">
+              <p className="mb-2">Name: Leo Radtke</p>
+              <p className="mb-2">Address: Bachstraße 96, 22083 Hamburg</p>
+              <p className="mb-2">Contact: leo.radtke.info@gmail.com</p>
+              <p className="mb-2">
+                Professional Information: I offer services in the field of
+                website development.
+              </p>
+              <p className="mb-2">
+                Disclaimer: The information provided on this website is for
+                general informational purposes only. I do not make any
+                representations or warranties of any kind, express or implied,
+                about the completeness, accuracy, reliability, or suitability of
+                the information.
+              </p>
+              <p className="mb-2">
+                Copyright: All content, including text, images, and graphics, on
+                this website is copyrighted and may not be reproduced, modified,
+                or distributed without my express written consent.
+              </p>
+              <p>
+                Privacy Policy: This website does not collect or store any
+                personally identifiable information of its visitors.
+              </p>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

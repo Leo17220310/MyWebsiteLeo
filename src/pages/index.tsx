@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Intruduction from "../../src/sections/intruduction"
-import Socials from "../../src/sections/socials"
+
 import BgAnimation from "../../src/sections/backgroundAnimation"
 import WebDev from "../../src/sections/webdev"
 import NavBar from "../components/ui/floating-navbar"
@@ -9,29 +9,32 @@ import Language from "../sections/language"
 import Footer from "../sections/footer"
 import React from "react";
 import Experience from "../sections/experience";
-import { useEffect, useState } from "react";
-import Linie from "../sections/linie";
+import { useEffect } from "react";
 import Pricing from "../sections/pricing";
+
 
 export default function Home() {
 
-  useEffect(() => {
-    const checkDevice = () => {
-      if (window.innerWidth < 1024) {
-        alert("Diese Website ist nur auf PCs verfügbar. Bitte besuchen Sie uns auf einem Desktop-Gerät.");
-        // Alternativ können Sie auch eine Weiterleitung durchführen
-         window.location.href = "https://leo17220310.github.io/Portfolio/";
-      }
-    };
+ // Check if device is desktop or mobile
+  
+  // useEffect(() => {
+  //   const checkDevice = () => {
+  //     if (window.innerWidth < 1024) {
+  //        window.location.href = "https://leo17220310.github.io/Portfolio/";
+  //     }
+  //   };
 
-    checkDevice();
-    window.addEventListener('resize', checkDevice);
+  //   checkDevice();
+  //   window.addEventListener('resize', checkDevice);
 
-    return () => {
-      window.removeEventListener('resize', checkDevice);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('resize', checkDevice);
+  //   };
+  // }, []);
 
+
+
+  // Scroll to different Sections
   const scrollToWebDev = () => {
     const webDevSection = document.getElementById("web-dev-section");
     if (webDevSection) {
@@ -71,12 +74,15 @@ export default function Home() {
 
   return (
     <>
+
+
     {/* RESPONSIVE */}    
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <Head children={undefined}>
+  
       </Head>
 
 
+      {/* Language not avialble */}
 
       {/* <div>
         <Language />
@@ -84,16 +90,9 @@ export default function Home() {
   
 
 
-    {/* HOME INTRUDUCTION  */}
+      {/* HOME INTRUDUCTION  */}
       <div className='mb-[200px]'> 
         <Intruduction />
-      </div>
-
-  
-
-      {/* SOCIAL BAR */}
-      <div>
-       <Socials />
       </div>
 
 
@@ -111,33 +110,29 @@ export default function Home() {
         <WebDev />
       </div>
 
+
+      {/* Python Experience Section */}
       <div className='mb-[200px]' id="python-section">
         <Python></Python>
       </div>
 
-
-     
+     {/* Pricing */}
       <div className='mb-[200px]' id="pricing-section">
        <Pricing></Pricing>
       </div>
       
    
-
+      {/* Home Navbar Item */}
       <div>
-        {/* Home-Schaltfläche hinzugefügt */}
         <button onClick={scrollToHome}>Go to Home</button>
       </div>
-
+      
+      {/* Navbar */}
       <div>
-        {/* Navbar hinzugefügt */}
        <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} scrollToPython={scrollToPython} scrollToExperience={scrollToExperience} scrollToPricing={scrollToPricing}/> 
       </div>
 
-     
-     
-
-    
-
+      {/* Footer */}
       <div>
         <Footer />
       </div>

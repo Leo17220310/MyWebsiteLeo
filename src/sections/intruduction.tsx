@@ -1,17 +1,21 @@
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 import { Button } from "@/components/ui/button";
+import React, { useState, useEffect } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 
 const Intruductions = () => {
+
+  const inputOptions = ["text-input", "file-input", "image-input"];
   // WORDS
   const words = [
     {
-      text: "Programmer",
+      text: "Software Developer",
+      text2: "Student",
       className: "text-blue-300",
     },
   ];
 
   //CONTACT BUTTON FUNKTION
-
   const handleContactMeClick = () => {
     window.location.href = "mailto:leo.radtke.info@gmail.com";
   };
@@ -66,7 +70,7 @@ const Intruductions = () => {
         <div className="mt-[200px] ml-[210px] sm:mt-[300px] sm:ml-[210px] text-5xl font-bold text-black">
           {" "}
           <h1>
-            Hi, I'm Le !{" "}
+            Hi, I'm Leo !{" "}
             <span className="text-indigo-600 ">
               {" "}
               <TypewriterEffectSmooth words={words} />{" "}

@@ -16,6 +16,10 @@ const Python: React.FC = () => {
     setSidebarOpen(true);
   };
 
+  const handleContact =() => {
+    window.location.href = "mailto:leo.radtke.info@gmail.com";
+  }
+
   const pythonCodeSamples = {
     nft: `
     import json
@@ -324,9 +328,21 @@ const Python: React.FC = () => {
   return (
     <>
       <div className="bg-gray-100 p-6 md:p-16 rounded-xl shadow-lg dark:bg-neutral-800 m-[200px]">
-        <h1 className="text-3xl text-black font-bold ml-[47px] underline  ">
-          Python Experience
-        </h1>
+        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+          <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
+            <h2 className="text-3xl lg:text-4xl text-gray-800 font-mediumbold dark:text-neutral-200">
+              My <span className="text-blue-300 font-bold"> Python </span>
+              Projects –{" "}
+              <span className="text-blue-300 font-bold">Contact me</span> for
+              Your Perfect Solution!
+            </h2>
+            <div className="mt-4 mb-[-100px]">
+              <Button className="text-black" variant="outline" onClick={handleContact}>
+                Contact Me
+              </Button>
+            </div>
+          </div>
+        </div>
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* NFT Collections Card */}
@@ -431,14 +447,13 @@ const Python: React.FC = () => {
       {sidebarOpen && (
         <div className="fixed top-0 right-0 w-1/4 h-full bg-white bg-opacity-25 backdrop-blur-lg shadow-lg overflow-y-auto transition-transform transform translate-x-0  ">
           <div className="p-4">
-          <Button
-             className="mb-4 p-2 bg-blue-300 text-black rounded hover:bg-blue-400 absolute left-0 top-0 m-4 h-15 w-15 bg-opacity-50 hover:bg-opacity-80"
-             onClick={() => setSidebarOpen(false)}
-          >
-            Close
-          </Button>
+            <Button
+              className="mb-4 p-2 bg-blue-300 text-black rounded hover:bg-blue-400 absolute left-0 top-0 m-4 h-15 w-15 bg-opacity-50 hover:bg-opacity-80"
+              onClick={() => setSidebarOpen(false)}
+            >
               Close
-          
+            </Button>
+            Close
             <pre>
               <code
                 className="python text-black "

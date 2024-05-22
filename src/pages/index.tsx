@@ -125,7 +125,7 @@ export default function Home() {
    
       {/* Home Navbar Item */}
       <div>
-        <button onClick={scrollToHome}>Go to Home</button>
+        <button onClick={scrollToHome}></button>
       </div>
       
       {/* Navbar */}

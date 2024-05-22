@@ -84,14 +84,6 @@ const Footer = () => {
                 <p>
                   <a
                     className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
-                    href="https://wa.me/+4915170430110"
-                  >
-                    WhatsApp
-                  </a>
-                </p>
-                <p>
-                  <a
-                    className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
                     onClick={() => copyToClipboard("leo220317")}
                   >
                     Snapchat
@@ -110,14 +102,6 @@ const Footer = () => {
                     href="mailto:leo.radtke.info@gmail.com"
                   >
                     Management E-mail
-                  </a>
-                </p>
-                <p>
-                  <a
-                    className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
-                    href="mailto:leoradtke@outlook.de"
-                  >
-                    Private E-Mail
                   </a>
                 </p>
                 <p>
@@ -246,25 +230,25 @@ const Footer = () => {
                 <path d="m6 6 12 12" />
               </svg>
             </button>
-            <div className="text-white text-3xl font-bold text-center mb-4">
+            <div className="text-blue-300 text-3xl font-bold text-center mb-4 hover:underline hover:text-blue-300">
               Imprint
             </div>
             <div className="text-center">
-              <p className="mb-2">Name: Leo Radtke</p>
-              <p className="mb-2">Address: Bachstraße 96, 22083 Hamburg</p>
-              <p className="mb-2">Contact: leo.radtke.info@gmail.com</p>
-              <p className="mb-2">
+              <p className="mb-4">Name: Leo Radtke</p>
+              <p className="mb-4">Address: Bachstraße 96, 22083 Hamburg</p>
+              <p className="mb-4">Contact: leo.radtke.info@gmail.com</p>
+              <p className="mb-4">
                 Professional Information: I offer services in the field of
                 website development.
               </p>
-              <p className="mb-2">
+              <p className="mb-4">
                 Disclaimer: The information provided on this website is for
                 general informational purposes only. I do not make any
                 representations or warranties of any kind, express or implied,
                 about the completeness, accuracy, reliability, or suitability of
                 the information.
               </p>
-              <p className="mb-2">
+              <p className="mb-4">
                 Copyright: All content, including text, images, and graphics, on
                 this website is copyrighted and may not be reproduced, modified,
                 or distributed without my express written consent.

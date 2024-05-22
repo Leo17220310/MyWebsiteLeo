@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import Intruduction from "../../src/sections/intruduction"
 
+
 import BgAnimation from "../../src/sections/backgroundAnimation"
 import WebDev from "../../src/sections/webdev"
 import NavBar from "../components/ui/floating-navbar"
 import Python from "../sections/python"
 import Language from "../sections/language"
 import Footer from "../sections/footer"
-import React from "react";
+import React, { Component } from "react";
 import Experience from "../sections/experience";
 import { useEffect } from "react";
 import Pricing from "../sections/pricing";
@@ -74,11 +75,11 @@ export default function Home() {
 
   return (
     <>
+ 
 
-
-    {/* RESPONSIVE */}    
+      {/* RESPONSIVE */}    
       <Head children={undefined}>
-  
+
       </Head>
 
 

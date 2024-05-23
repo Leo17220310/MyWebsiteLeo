@@ -14,7 +14,7 @@ env:
   DEPLOYMENT_FOLDER: public
 
 jobs:
-# Please do not rename this job
+  # Please do not rename this job
   build-project:
     name: build MyWebsiteLeo
     runs-on: ubuntu-latest
@@ -27,18 +27,18 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'  # Aktualisiere hier auf eine neuere Node.js-Version
+          node-version: '22.x' 
 
       - name: Install dependencies
-        run: npm install  # Füge diesen Schritt hinzu, um die Abhängigkeiten zu installieren
+        run: npm install  # Installiere die Abhängigkeiten
 
       - name: Build Node assets
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
-        run: npm run build  # Änderung hier: Ausführung des Build-Befehls
+        run: npm run build  # Führe den Build-Befehl aus
 
-# Please do not touch the following action
+      # Please do not touch the following action
       - name: Store deployment content
         uses: ionos-deploy-now/artifact-action@v1
         with:
@@ -48,5 +48,5 @@ jobs:
           branch-id: ${{ inputs.branch-id }}
           version: ${{ github.sha }}
           folder: ${{ env.DEPLOYMENT_FOLDER }}
-          config-file: .deploy-now/MyWebsiteLeo/config.yaml
+          config-file: .deploy-now/Portfolio/config.yaml
           action: upload

@@ -16,7 +16,7 @@ env:
 jobs:
 # Please do not rename this job
   build-project:
-    name: build Portfolio
+    name: build MyWebsiteLeo
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -48,5 +48,5 @@ jobs:
           branch-id: ${{ inputs.branch-id }}
           version: ${{ github.sha }}
           folder: ${{ env.DEPLOYMENT_FOLDER }}
-          config-file: .deploy-now/Portfolio/config.yaml
+          config-file: .deploy-now/MyWebsiteLeo/config.yaml
           action: upload

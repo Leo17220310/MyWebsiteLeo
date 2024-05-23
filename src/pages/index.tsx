@@ -109,6 +109,7 @@ export default function Home() {
         <div className='mb-[200px]' id="python-section">
         <Python></Python>
       </div>  
+      
 
      {/* Pricing */}
        <div className='mb-[200px]' id="pricing-section">

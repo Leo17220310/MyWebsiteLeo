@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Image from 'next/image';
 
 const WebDev = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -122,7 +123,7 @@ const WebDev = () => {
 
                   <button
                     type="button"
-                    className={`hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-700 dark:hover:bg-neutral-700 ${
+                    className={`hs-tab-active:bg-white hs -tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-700 dark:hover:bg-neutral-700 ${
                       activeTab === 3 ? "active" : ""
                     }`}
                     id="tabs-with-card-item-3"
@@ -143,7 +144,7 @@ const WebDev = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                        <path d="M12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
                         <path d="M5 3v4" />
                         <path d="M19 17v4" />
                         <path d="M3 5h4" />
@@ -173,10 +174,12 @@ const WebDev = () => {
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-1"
                   >
-                    <img
-                      className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
+                    <Image
                       src="/sreenweb.png"
                       alt="Image Description"
+                      width={640}
+                      height={480}
+                      className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
                     />
                   </div>
 
@@ -186,10 +189,12 @@ const WebDev = () => {
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-2"
                   >
-                    <img
-                      className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
+                    <Image
                       src="/portfolioweb.png"
                       alt="Image Description"
+                      width={640}
+                      height={480}
+                      className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
                     />
                   </div>
 
@@ -199,10 +204,12 @@ const WebDev = () => {
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-3"
                   >
-                    <img
-                      className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
+                    <Image
                       src="/portnew.png"
                       alt="Image Description"
+                      width={640}
+                      height={480}
+                      className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
                     />
                   </div>
                 </div>
@@ -251,3 +258,4 @@ const WebDev = () => {
 };
 
 export default WebDev;
+

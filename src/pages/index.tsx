@@ -1,7 +1,5 @@
-import Head from 'next/head';
+
 import Intruduction from "../../src/sections/intruduction"
-
-
 import BgAnimation from "../../src/sections/backgroundAnimation"
 import WebDev from "../../src/sections/webdev"
 import NavBar from "../components/ui/floating-navbar"
@@ -10,7 +8,6 @@ import Language from "../sections/language"
 import Footer from "../sections/footer"
 import React, { Component } from "react";
 import Experience from "../sections/experience";
-import { useEffect } from "react";
 import Pricing from "../sections/pricing";
 
 
@@ -75,12 +72,7 @@ export default function Home() {
 
   return (
     <>
- 
-
-      {/* RESPONSIVE */}    
-      <Head children={undefined}>
-
-      </Head>
+  
 
 
       {/* Language not avialble */}
@@ -102,25 +94,25 @@ export default function Home() {
         <BgAnimation/>
       </div>
 
-      <div   id="experience-section">
+      {/* <div   id="experience-section">
         <Experience />
-      </div>
+      </div> */}
 
       {/* WEB DEV INFORMATION */}
-      <div id="web-dev-section" className='mb-[200px] mt-[200px]'  > 
+      {/* <div id="web-dev-section" className='mb-[200px] mt-[200px]'  > 
         <WebDev />
-      </div>
+      </div> */}
 
 
       {/* Python Experience Section */}
-      <div className='mb-[200px]' id="python-section">
+      {/* <div className='mb-[200px]' id="python-section">
         <Python></Python>
-      </div>
+      </div> */}
 
      {/* Pricing */}
-      <div className='mb-[200px]' id="pricing-section">
+      {/* <div className='mb-[200px]' id="pricing-section">
        <Pricing></Pricing>
-      </div>
+      </div> */}
       
    
       {/* Home Navbar Item */}
@@ -129,9 +121,9 @@ export default function Home() {
       </div>
       
       {/* Navbar */}
-      <div>
+      {/* <div>
        <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} scrollToPython={scrollToPython} scrollToExperience={scrollToExperience} scrollToPricing={scrollToPricing}/> 
-      </div>
+      </div> */}
 
       {/* Footer */}
       <div>

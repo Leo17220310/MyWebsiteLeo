@@ -4,6 +4,7 @@ import python from "highlight.js/lib/languages/python";
 import "highlight.js/styles/default.css";
 import "tailwindcss/tailwind.css";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 hljs.registerLanguage("python", python);
 
@@ -16,9 +17,9 @@ const Python: React.FC = () => {
     setSidebarOpen(true);
   };
 
-  const handleContact =() => {
+  const handleContact = () => {
     window.location.href = "mailto:leo.radtke.info@gmail.com";
-  }
+  };
 
   const pythonCodeSamples = {
     nft: `
@@ -326,144 +327,152 @@ const Python: React.FC = () => {
   };
 
   return (
-    <>
-      <div className="bg-gray-100 p-6 md:p-16 rounded-xl shadow-lg dark:bg-neutral-800 m-[200px]">
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-          <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
-            <h2 className="text-3xl lg:text-4xl text-gray-800 font-mediumbold dark:text-neutral-200">
-              My <span className="text-blue-300 font-bold"> Python </span>
-              Projects –{" "}
-              <span className="text-blue-300 font-bold">Contact me</span> for
-              Your Perfect Solution!
-            </h2>
-            <div className="mt-4 mb-[-100px]">
-              <Button className="text-black" variant="outline" onClick={handleContact}>
-                Contact Me
-              </Button>
-            </div>
+    <>  <div className="bg-gray-100 p-6 md:p-16 rounded-xl shadow-lg dark:bg-neutral-800 m-[200px]">
+    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+      <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
+        <h2 className="text-3xl lg:text-4xl text-gray-800 font-mediumbold dark:text-neutral-200">
+          My <span className="text-blue-300 font-bold"> Python </span>
+          Projects –{" "}
+          <span className="text-blue-300 font-bold">Contact me</span> for
+          Your Perfect Solution!
+        </h2>
+        <div className="mt-4 mb-[-100px]">
+          <Button
+            className="text-black"
+            variant="outline"
+            onClick={handleContact}
+          >
+            Contact Me
+          </Button>
+        </div>
+      </div>
+    </div>
+    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* NFT Collections Card */}
+        <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+          <div className="h-52 flex flex-col justify-center items-center bg-blue-200 rounded-t-xl">
+            <Image
+              src="/collections.png"
+              alt="NFT Collections"
+              width={500}
+              height={210}
+              className="rounded-t-xl"
+            />
+          </div>
+          <div className="p-4 md:p-6">
+            <span className="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-blue-500">
+              API
+            </span>
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
+              NFT collections
+            </h3>
+            <p className="mt-3 text-gray-500 dark:text-neutral-500">
+              This script interfaces with an API to provide detailed
+              insights into individual NFT collections, facilitating
+              informed analysis and exploration of the NFT market.
+            </p>
+          </div>
+          <div className="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+            <button
+              className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+              onClick={() => handleSidebar(pythonCodeSamples.nft)}
+            >
+              View sample
+            </button>
           </div>
         </div>
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* NFT Collections Card */}
-            <div className="group flex  flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-              <div className="h-52 flex flex-col justify-center items-center bg-blue-200 rounded-t-xl">
-                <img
-                  src="collections.png"
-                  alt="NFT Collections"
-                  className="w-[500px] h-[210px] rounded-t-xl"
-                />
-              </div>
-              <div className="p-4 md:p-6">
-                <span className="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-blue-500">
-                  API
-                </span>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
-                  NFT collections
-                </h3>
-                <p className="mt-3 text-gray-500 dark:text-neutral-500">
-                  This script interfaces with an API to provide detailed
-                  insights into individual NFT collections, facilitating
-                  informed analysis and exploration of the NFT market.
-                </p>
-              </div>
-              <div className="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                <button
-                  className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-                  onClick={() => handleSidebar(pythonCodeSamples.nft)}
-                >
-                  View sample
-                </button>
-              </div>
-            </div>
 
-            {/* Search Algorithms Card */}
-            <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-              <div className="h-52 flex flex-col justify-center items-center bg-blue-200 rounded-t-xl">
-                <img
-                  src="search.png"
-                  alt="Search Algorithms"
-                  className="w-[500px] h-[210px] rounded-t-xl"
-                />
-              </div>
-              <div className="p-4 md:p-6">
-                <span className="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-rose-500">
-                  Search
-                </span>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
-                  Algorithms
-                </h3>
-                <p className="mt-3 text-gray-500 dark:text-neutral-500">
-                  This Python application demonstrates both binary search and
-                  linear search algorithms for efficiently locating elements in
-                  a list.
-                </p>
-              </div>
-              <div className="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                <button
-                  className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-                  onClick={() => handleSidebar(pythonCodeSamples.search)}
-                >
-                  View sample
-                </button>
-              </div>
-            </div>
+        {/* Search Algorithms Card */}
+        <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+          <div className="h-52 flex flex-col justify-center items-center bg-blue-200 rounded-t-xl">
+            <Image
+              src="/search.png"
+              alt="Search Algorithms"
+              width={500}
+              height={210}
+              className="rounded-t-xl"
+            />
+          </div>
+          <div className="p-4 md:p-6">
+            <span className="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-rose-500">
+              Search
+            </span>
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
+              Algorithms
+            </h3>
+            <p className="mt-3 text-gray-500 dark:text-neutral-500">
+              This Python application demonstrates both binary search and
+              linear search algorithms for efficiently locating elements in
+              a list.
+            </p>
+          </div>
+          <div className="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+            <button
+              className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+              onClick={() => handleSidebar(pythonCodeSamples.search)}
+            >
+              View sample
+            </button>
+          </div>
+        </div>
 
-            {/* Turtle Christmas Tree Card */}
-            <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-              <div className="h-52 flex flex-col justify-center items-center bg-amber-500 rounded-t-xl">
-                <img
-                  src="tree.png"
-                  alt="Turtle Christmas Tree"
-                  className="w-[500px] h-[210px] rounded-t-xl"
-                />
-              </div>
-              <div className="p-4 md:p-6">
-                <span className="block mb-1 text-xs font-semibold uppercase text-blue-600">
-                  Turtle
-                </span>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
-                  Christmas Tree
-                </h3>
-                <p className="mt-3 text-gray-500 dark:text-neutral-500">
-                  My Python script uses the Turtle graphics module to draw a
-                  detailed Christmas tree, complete with decorations.
-                </p>
-              </div>
-              <div className="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                <button
-                  className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-                  onClick={() => handleSidebar(pythonCodeSamples.tree)}
-                >
-                  View sample
-                </button>
-              </div>
-            </div>
+        {/* Turtle Christmas Tree Card */}
+        <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+          <div className="h-52 flex flex-col justify-center items-center bg-amber-500 rounded-t-xl">
+            <Image
+              src="/tree.png"
+              alt="Turtle Christmas Tree"
+              width={500}
+              height={210}
+              className="rounded-t-xl"
+            />
+          </div>
+          <div className="p-4 md:p-6">
+            <span className="block mb-1 text-xs font-semibold uppercase text-blue-600">
+              Turtle
+            </span>
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:hover:text-white">
+              Christmas Tree
+            </h3>
+            <p className="mt-3 text-gray-500 dark:text-neutral-500">
+              My Python script uses the Turtle graphics module to draw a
+              detailed Christmas tree, complete with decorations.
+            </p>
+          </div>
+          <div className="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+            <button
+              className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+              onClick={() => handleSidebar(pythonCodeSamples.tree)}
+            >
+              View sample
+            </button>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      {/* Sidebar */}
-      {sidebarOpen && (
-        <div className="fixed top-0 right-0 w-1/4 h-full bg-white bg-opacity-25 backdrop-blur-lg shadow-lg overflow-y-auto transition-transform transform translate-x-0  ">
-          <div className="p-4">
-            <Button
-              className="mb-4 p-2 bg-blue-300 text-black rounded hover:bg-blue-400 absolute left-0 top-0 m-4 h-15 w-15 bg-opacity-50 hover:bg-opacity-80"
-              onClick={() => setSidebarOpen(false)}
-            >
-              Close
-            </Button>
-            Close
-            <pre>
-              <code
-                className="python text-black "
-                dangerouslySetInnerHTML={{
-                  __html: hljs.highlight(code, { language: "python" }).value,
-                }}
-              />
-            </pre>
-          </div>
-        </div>
+  {/* Sidebar */}
+  {sidebarOpen && (
+    <div className="fixed top-0 right-0 w-1/4 h-full bg-white bg-opacity-25 backdrop-blur-lg shadow-lg overflow-y-auto transition-transform transform translate-x-0  ">
+      <div className="p-4">
+        <Button
+          className="mb-4 p-2 bg-blue-300 text-black rounded hover:bg-blue-400 absolute left-0 top-0 m-4 h-15 w-15 bg-opacity-50 hover:bg-opacity-80"
+          onClick={() => setSidebarOpen(false)}
+        >
+          Close
+        </Button>
+        <pre>
+          <code
+            className="python text-black "
+            dangerouslySetInnerHTML={{
+              __html: hljs.highlight(code, { language: "python" }).value,
+            }}
+          />
+        </pre>
+      </div>
+    </div>
       )}
     </>
   );

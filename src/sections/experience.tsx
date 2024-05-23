@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from 'next/image';
 
 const Experience = () => {
   return (
@@ -9,7 +10,7 @@ const Experience = () => {
             <div className="py-8 lg:pe-8">
               <div className="space-y-5 lg:space-y-8">
                 <h1 className="text-3xl text-black font-bold underline">
-                  Experince
+                  Experience
                 </h1>
 
                 <div className="flex items-center gap-x-5">
@@ -30,7 +31,7 @@ const Experience = () => {
 
                 <p className="text-lg text-gray-800 dark:text-neutral-200">
                   My next step was learning Python, where I wrote my first
-                  "Hello World" program. I quickly moved on to creating larger
+                  Hello World program. I quickly moved on to creating larger
                   applications, starting with mastering loops. My interest then
                   shifted towards working with APIs in Python, which opened up
                   new possibilities for me.
@@ -39,25 +40,29 @@ const Experience = () => {
                   <div className="grid lg:grid-cols-2 gap-3">
                     <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
                       <figure className="relative w-full h-60">
-                        <img
+                        <Image
                           className="size-full absolute top-0 start-0 object-cover rounded-xl"
-                          src="ichprogrammier.png.jpg"
-                          alt="Image Description"
-                        ></img>
+                          src="/ichprogrammier.png.jpg"
+                          alt="Programming"
+                          fill
+                        />
                       </figure>
                       <figure className="relative w-full h-60">
-                        <img
+                        <Image
                           className="size-full absolute top-0 start-0 object-cover rounded-xl"
-                          src="progrtammieren.png.jpg"
-                        ></img>
+                          src="/progrtammieren.png.jpg"
+                          alt="Programming"
+                          fill
+                        />
                       </figure>
                     </div>
                     <figure className="relative w-full h-72 sm:h-96 lg:h-full">
-                      <img
+                      <Image
                         className="size-full absolute top-0 start-0 object-cover rounded-xl"
-                        src="leooo.png"
-                        alt="Image Description"
-                      ></img>
+                        src="/leooo.png"
+                        alt="Programming"
+                        fill
+                      />
                     </figure>
                   </div>
 
@@ -76,7 +81,7 @@ const Experience = () => {
                 </p>
 
                 <p className="text-lg text-gray-800 dark:text-neutral-200">
-                  Through these experiences, I've gained a comprehensive
+                  Through these experiences, I have gained a comprehensive
                   understanding of both game development and web development,
                   continuously expanding my skills and knowledge in the world of
                   programming.
@@ -92,11 +97,13 @@ const Experience = () => {
                 </blockquote>
 
                 <figure>
-                  <img
+                  <Image
                     className="w-[840px] h-[400px] object-cover rounded-xl"
-                    src="ichfreizeit.png.jpg"
-                    alt="Image Description"
-                  ></img>
+                    src="/ichfreizeit.png.jpg"
+                    alt="Leisure"
+                    width={840}
+                    height={400}
+                  />
                 </figure>
 
                 <div className="space-y-3">
@@ -141,11 +148,13 @@ const Experience = () => {
                   className="block flex-shrink-0"
                   href="https://www.instagram.com/leo22031017/"
                 >
-                  <img
+                  <Image
                     className="size-10 rounded-full"
-                    src="ichfreizeit.png.jpg"
-                    alt="Image Description"
-                  ></img>
+                    src="/ichfreizeit.png.jpg"
+                    alt="Instagram"
+                    width={40}
+                    height={40}
+                  />
                 </a>
 
                 <a
@@ -166,7 +175,6 @@ const Experience = () => {
                       type="button"
                       className="py-1.5 px-2.5 inline-flex items-center gap-x-2 text-xs font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                     >
-                    
                       <a href="https://www.instagram.com/leo22031017/">
                         Follow Instagram
                       </a>
@@ -190,11 +198,13 @@ const Experience = () => {
                   </div>
 
                   <div className="flex-shrink-0 relative rounded-lg overflow-hidden size-20">
-                    <img
+                    <Image
                       className="size-full absolute top-0 start-0 object-cover rounded-lg"
-                      src="sreenweb.png"
-                      alt="Image Description"
-                    ></img>
+                      src="/sreenweb.png"
+                      alt="Summarizer AI Website"
+                      width={80}
+                      height={80}
+                    />
                   </div>
                 </a>
 
@@ -209,11 +219,13 @@ const Experience = () => {
                   </div>
 
                   <div className="flex-shrink-0 relative rounded-lg overflow-hidden size-20">
-                    <img
+                    <Image
                       className="size-full absolute top-0 start-0 object-cover rounded-lg"
-                      src="portfolio.png"
-                      alt="Image Description"
-                    ></img>
+                      src="/portfolio.png"
+                      alt="Old Portfolio"
+                      width={80}
+                      height={80}
+                    />
                   </div>
                 </a>
 
@@ -225,11 +237,13 @@ const Experience = () => {
                   </div>
 
                   <div className="flex-shrink-0 relative rounded-lg overflow-hidden size-20">
-                    <img
+                    <Image
                       className="size-full absolute top-0 start-0 object-cover rounded-lg"
-                      src="portnew.png"
-                      alt="Image Description"
-                    ></img>
+                      src="/portnew.png"
+                      alt="Current Portfolio"
+                      width={80}
+                      height={80}
+                    />
                   </div>
                 </a>
               
@@ -242,11 +256,11 @@ const Experience = () => {
                 
                 <a
                   href="https://github.com/m-kuehnle/summarizer"
-                  className="text-black  hover:text-blue-600"
+                  className="text-black hover:text-blue-600"
                   target="_blank"
                 >
                   <span className="text-black font-medium">
-                     Summarizer AI Website :
+                    Summarizer AI Website :
                     <br></br>
                   </span>{" "}
                   <br></br>

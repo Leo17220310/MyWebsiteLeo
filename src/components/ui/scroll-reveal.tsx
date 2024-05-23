@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
+import Image from "next/image";
 
 export const StickyScroll = ({
   content,
@@ -80,11 +81,11 @@ export const StickyScroll = ({
         )}
       >
         {content[activeCard].content ?? null}
-        <img
-          src="public/screenWebsiteSummary.png"
+        <Image
+          src="/screenWebsiteSummary.png"
           className="h-full w-full object-cover"
-         
           alt="Image"
+          fill
         />
       </motion.div>
     </motion.div>

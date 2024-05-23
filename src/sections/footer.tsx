@@ -165,7 +165,6 @@ const Footer = () => {
                 href="https://www.instagram.com/leo22031017/"
                 target="_blank"
               >
-                <img src="instagram.png" className="w-5 h-5" alt="Instagram" />
               </a>
 
           </div>

@@ -84,9 +84,9 @@ export default function Home() {
 
 
       {/* HOME INTRUDUCTION  */}
-      {/* <div className='mb-[200px]'> 
+       <div className='mb-[200px]'> 
         <Intruduction />
-      </div> */}
+      </div> 
 
 
       {/* BACKGROUND ANIMATION  */}
@@ -99,16 +99,16 @@ export default function Home() {
       </div>
 
       {/* WEB DEV INFORMATION */}
-       {/* <div id="web-dev-section" className='mb-[200px] mt-[200px]'  > 
+        <div id="web-dev-section" className='mb-[200px] mt-[200px]'  > 
         <WebDev /> 
-      </div>  */}
+      </div>  
 
 
 
       {/* Python Experience Section */}
-       {/* <div className='mb-[200px]' id="python-section">
+        <div className='mb-[200px]' id="python-section">
         <Python></Python>
-      </div>  */}
+      </div>  
 
      {/* Pricing */}
        <div className='mb-[200px]' id="pricing-section">

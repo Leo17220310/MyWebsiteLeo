@@ -174,7 +174,7 @@ const WebDev = () => {
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-1"
                   >
-                    <Image
+                    <img
                       src="/sreenweb.png"
                       alt="Image Description"
                       width={640}
@@ -189,7 +189,7 @@ const WebDev = () => {
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-2"
                   >
-                    <Image
+                    <img
                       src="/portfolioweb.png"
                       alt="Image Description"
                       width={640}
@@ -204,7 +204,7 @@ const WebDev = () => {
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-3"
                   >
-                    <Image
+                    <img
                       src="/portnew.png"
                       alt="Image Description"
                       width={640}

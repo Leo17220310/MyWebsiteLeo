@@ -97,7 +97,7 @@ const Intruductions = () => {
         </div>
 
         <div className="w-[550px] h-[450px] mt-[-500px] ml-[0px] sm:mt-[-350px] sm:ml-[1100px]">
-          <Image src="/coder.png" className="small-logo" alt="Coder Image" width={550} height={450} />
+          <img src="/coder.png" className="small-logo" alt="Coder Image" width={550} height={450} />
         </div>
       </div>
     </>

@@ -352,7 +352,7 @@ const Python: React.FC = () => {
         {/* NFT Collections Card */}
         <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div className="h-52 flex flex-col justify-center items-center bg-blue-200 rounded-t-xl">
-            <Image
+            <img
               src="/collections.png"
               alt="NFT Collections"
               width={500}
@@ -386,7 +386,7 @@ const Python: React.FC = () => {
         {/* Search Algorithms Card */}
         <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div className="h-52 flex flex-col justify-center items-center bg-blue-200 rounded-t-xl">
-            <Image
+            <img
               src="/search.png"
               alt="Search Algorithms"
               width={500}
@@ -420,7 +420,7 @@ const Python: React.FC = () => {
         {/* Turtle Christmas Tree Card */}
         <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div className="h-52 flex flex-col justify-center items-center bg-amber-500 rounded-t-xl">
-            <Image
+            <img
               src="/tree.png"
               alt="Turtle Christmas Tree"
               width={500}

@@ -100,8 +100,9 @@ export default function Home() {
 
       {/* WEB DEV INFORMATION */}
        {/* <div id="web-dev-section" className='mb-[200px] mt-[200px]'  > 
-        <WebDev />
+        <WebDev /> 
       </div>  */}
+
 
 
       {/* Python Experience Section */}

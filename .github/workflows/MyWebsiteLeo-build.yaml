@@ -22,31 +22,31 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
         with:
-          submodules: 'recursive'
+          submodules: "recursive"
 
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '22.x' 
+          node-version: "22.x"
 
       - name: Install dependencies
-        run: npm install  # Installiere die Abhängigkeiten
+        run: npm install # Installiere die Abhängigkeiten
 
       - name: Build Node assets
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
-        run: npm run build  # Führe den Build-Befehl aus
+        run: npm run build # Führe den Build-Befehl aus
 
       # Please do not touch the following action
       - name: Store deployment content
-        uses: ionos-deploy-now/artifact-action@v1
-        with:
-          api-key: ${{ secrets.IONOS_API_KEY }}
-          service-host: api-eu.ionos.space
-          project-id: cea0bf80-3a8d-4dc8-955c-15636a75b7c9
-          branch-id: ${{ inputs.branch-id }}
-          version: ${{ github.sha }}
-          folder: ${{ env.DEPLOYMENT_FOLDER }}
-          config-file: .deploy-now/Portfolio/config.yaml
-          action: upload
+  uses: ionos-deploy-now/artifact-action@v1
+  with:
+    api-key: ${{ secrets.IONOS_API_KEY }}
+    service-host: api-eu.ionos.space
+    project-id: 57a5ce729edc75f1649f3051f3b8d6a01d78c181
+    branch-id: ${{ inputs.branch-id }}
+    version: ${{ github.sha }}
+    folder: ${{ env.DEPLOYMENT_FOLDER }}
+    config-file: .deploy-now/Portfolio/config.yaml
+    action: upload

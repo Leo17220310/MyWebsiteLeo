@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Image from 'next/image';
 
 const Experience = () => {
   return (
@@ -40,28 +39,28 @@ const Experience = () => {
                   <div className="grid lg:grid-cols-2 gap-3">
                     <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
                       <figure className="relative w-full h-60">
-                        <Image
+                        <img
                           className="size-full absolute top-0 start-0 object-cover rounded-xl"
                           src="/ichprogrammier.png.jpg"
                           alt="Programming"
-                          fill
+                          style={{ width: '100%', height: '100%' }}
                         />
                       </figure>
                       <figure className="relative w-full h-60">
-                        <Image
+                        <img
                           className="size-full absolute top-0 start-0 object-cover rounded-xl"
                           src="/progrtammieren.png.jpg"
                           alt="Programming"
-                          fill
+                          style={{ width: '100%', height: '100%' }}
                         />
                       </figure>
                     </div>
                     <figure className="relative w-full h-72 sm:h-96 lg:h-full">
-                      <Image
+                      <img
                         className="size-full absolute top-0 start-0 object-cover rounded-xl"
                         src="/leooo.png"
                         alt="Programming"
-                        fill
+                        style={{ width: '100%', height: '100%' }}
                       />
                     </figure>
                   </div>
@@ -97,7 +96,7 @@ const Experience = () => {
                 </blockquote>
 
                 <figure>
-                  <Image
+                  <img
                     className="w-[840px] h-[400px] object-cover rounded-xl"
                     src="/ichfreizeit.png.jpg"
                     alt="Leisure"
@@ -148,7 +147,7 @@ const Experience = () => {
                   className="block flex-shrink-0"
                   href="https://www.instagram.com/leo22031017/"
                 >
-                  <Image
+                  <img
                     className="size-10 rounded-full"
                     src="/ichfreizeit.png.jpg"
                     alt="Instagram"
@@ -198,7 +197,7 @@ const Experience = () => {
                   </div>
 
                   <div className="flex-shrink-0 relative rounded-lg overflow-hidden size-20">
-                    <Image
+                    <img
                       className="size-full absolute top-0 start-0 object-cover rounded-lg"
                       src="/sreenweb.png"
                       alt="Summarizer AI Website"
@@ -219,7 +218,7 @@ const Experience = () => {
                   </div>
 
                   <div className="flex-shrink-0 relative rounded-lg overflow-hidden size-20">
-                    <Image
+                    <img
                       className="size-full absolute top-0 start-0 object-cover rounded-lg"
                       src="/portfolio.png"
                       alt="Old Portfolio"
@@ -237,7 +236,7 @@ const Experience = () => {
                   </div>
 
                   <div className="flex-shrink-0 relative rounded-lg overflow-hidden size-20">
-                    <Image
+                    <img
                       className="size-full absolute top-0 start-0 object-cover rounded-lg"
                       src="/portnew.png"
                       alt="Current Portfolio"

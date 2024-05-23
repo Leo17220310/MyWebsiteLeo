@@ -1,6 +1,3 @@
-# To better understand this file read this:
-# https://docs.ionos.space/docs/github-actions-customization/
-
 name: "Deploy Now: Execute Build"
 
 on:
@@ -36,7 +33,7 @@ jobs:
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
-        run: npm run dev
+        run: npm run build  # Änderung hier: Ausführung des Build-Befehls
 
 # Please do not touch the following action
       - name: Store deployment content

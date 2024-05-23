@@ -27,13 +27,15 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 22.x
 
       - name: Build Node assets
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
-        run: npm run build  # Änderung hier: Ausführung des Build-Befehls
+            run: |
+          npm ci
+          npm run build
 
 # Please do not touch the following action
       - name: Store deployment content

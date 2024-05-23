@@ -58,7 +58,7 @@ const Intruductions = () => {
         </div>
 
         <div className="w-[700px] h-[600px] mt-[-400px] ml-[1100px]">
-          <img src="../assets/coder.png"className="small-logo" alt="Coder Image" width={700} height={600} />
+          <img src="/coder.png"className="small-logo" alt="Coder Image" width={700} height={600} />
         </div>
       </div>
 
@@ -98,7 +98,7 @@ const Intruductions = () => {
         </div>
 
         <div className="w-[550px] h-[450px] mt-[-500px] ml-[0px] sm:mt-[-350px] sm:ml-[1100px]">
-          <img src="../assets/coder.png" className="small-logo" alt="Coder Image" width={550} height={450} />
+          <img src="./coder.png" className="small-logo" alt="Coder Image" width={550} height={450} />
         </div>
       </div>
     </>

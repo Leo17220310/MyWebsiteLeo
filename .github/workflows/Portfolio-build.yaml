@@ -14,11 +14,12 @@ env:
   DEPLOYMENT_FOLDER: public
 
 jobs:
+# Please do not rename this job
   build-project:
-    name: Build Portfolio
+    name: build Portfolio
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
         with:
           submodules: 'recursive'
@@ -26,14 +27,15 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x  # Verwende die neueste LTS-Version
+          node-version: 14.x
 
       - name: Build Node assets
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
-        run: npm run build
+        run: npm run build  # Änderung hier: Ausführung des Build-Befehls
 
+# Please do not touch the following action
       - name: Store deployment content
         uses: ionos-deploy-now/artifact-action@v1
         with:

@@ -94,25 +94,25 @@ export default function Home() {
         <BgAnimation/>
       </div>
 
-      {/* <div   id="experience-section">
+       <div   id="experience-section">
         <Experience />
-      </div> */}
+      </div>
 
       {/* WEB DEV INFORMATION */}
-      {/* <div id="web-dev-section" className='mb-[200px] mt-[200px]'  > 
+       <div id="web-dev-section" className='mb-[200px] mt-[200px]'  > 
         <WebDev />
-      </div> */}
+      </div> 
 
 
       {/* Python Experience Section */}
-      {/* <div className='mb-[200px]' id="python-section">
+       <div className='mb-[200px]' id="python-section">
         <Python></Python>
-      </div> */}
+      </div> 
 
      {/* Pricing */}
-      {/* <div className='mb-[200px]' id="pricing-section">
+       <div className='mb-[200px]' id="pricing-section">
        <Pricing></Pricing>
-      </div> */}
+      </div> 
       
    
       {/* Home Navbar Item */}
@@ -121,9 +121,9 @@ export default function Home() {
       </div>
       
       {/* Navbar */}
-      {/* <div>
+       <div>
        <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} scrollToPython={scrollToPython} scrollToExperience={scrollToExperience} scrollToPricing={scrollToPricing}/> 
-      </div> */}
+      </div> 
 
       {/* Footer */}
       <div>

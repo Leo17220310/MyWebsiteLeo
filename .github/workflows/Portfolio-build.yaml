@@ -32,8 +32,7 @@ jobs:
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
-        run: | 
-        npm run build
+        run: npm run build
 
       - name: Store deployment content
         uses: ionos-deploy-now/artifact-action@v1

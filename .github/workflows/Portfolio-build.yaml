@@ -32,7 +32,7 @@ jobs:
       - name: Build Node assets
         env:
           CI: true
-          SITE_URL: ${{ inputs.site-url }}
+          SITE_URL: ${{ leo.radtke.me }}
             run: |
           npm ci
           npm run build

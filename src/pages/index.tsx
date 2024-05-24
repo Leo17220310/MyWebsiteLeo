@@ -55,12 +55,7 @@ export default function Home() {
     }
   };
 
-  const scrollToExperience = () => {
-    const python = document.getElementById("experience-section");
-    if (python) {
-      python.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
 
 
 
@@ -119,7 +114,7 @@ export default function Home() {
       
       {/* Navbar */}
        <div>
-       <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} scrollToPython={scrollToPython} scrollToExperience={scrollToExperience} />
+       <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} scrollToPython={scrollToPython}  />
       </div> 
 
       {/* Footer */}

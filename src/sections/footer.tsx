@@ -107,14 +107,6 @@ const Footer = () => {
               <p>
                 <a
                   className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
-                  href="#pricing-section"
-                >
-                  Get your Website
-                </a>
-              </p>
-              <p>
-                <a
-                  className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
                   href="#"
                 >
                   Linktree

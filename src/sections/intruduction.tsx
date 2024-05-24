@@ -101,16 +101,23 @@ const Intruductions = () => {
       </div>
       </div>
 
-      <div className={`w-[700px] h-[600px] mt-[-400px] ml-[1100px] ${showContent ? styles.slideIn : ""}`}>
+    <div  className={`ml-[340px] mt-[44px] ${showContent ? styles.slideIn : ""}`}>
+      <a href="https://github.com/Leo17220310">
+        <img src="/git.png" alt="Git" width={30} height={30} />
+        </a>
+      </div>
+ 
+      <div className={`w-[700px] h-[800px] mt-[-410px] ml-[1100px] ${showContent ? styles.slideIn : ""}`}>
         <img
           src="/coder.png"
-          className="small-logo"
+          className="small-logo "
           alt="Coder Image"
           width={700}
           height={600}
         />
       </div>
     </div>
+
   );
 };
 

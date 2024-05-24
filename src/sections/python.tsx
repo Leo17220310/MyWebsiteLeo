@@ -10,6 +10,10 @@ import Image from "next/image";
 
 
 
+hljs.registerLanguage("python", python);
+
+
+
 const Python: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [code, setCode] = useState("");

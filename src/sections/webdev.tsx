@@ -15,19 +15,20 @@ const WebDev = () => {
 
   return (
     <>
-      <div className="max-w-[100rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto mt-[100px] mb-[100px]">
+    <div className="bg-gray-100 p-6 md:p-16 rounded-xl h-[800px] shadow-lg dark:bg-neutral-800 m-[200px] ">
+      <div className="max-w-[100rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto mb-[200px]  mt-[-100px] ">
         <div className="relative p-6 md:p-16">
           <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
             <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
               <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
-                <h2 className="text-3xl lg:text-4xl text-gray-800 font-mediumbold dark:text-neutral-200 mr-[100px]">
+                <h2 className="text-3xl lg:text-4xl text-gray-800 font-mediumbold  ">
                   My best and up to date
                   <span className="text-blue-300 font-bold"> Website </span>
                   Projects{" "}
                 </h2>
                 <div style={{ position: "relative" }}>
                   <Button
-                    className=" mr-[100px] mt-[20px] text-black overlapping-button"
+                    className="  mt-[20px] text-black rounded-xl hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300"
                     variant="outline"
                     onClick={handleContact}
                   >
@@ -253,6 +254,8 @@ const WebDev = () => {
           </div>
         </div>
       </div>
+      </div>
+   
     </>
   );
 };

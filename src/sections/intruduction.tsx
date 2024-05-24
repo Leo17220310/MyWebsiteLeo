@@ -49,7 +49,7 @@ const Intruductions = () => {
 
         <div className="mt-[30px] ml-[210px]">
           <Button
-            className="text-black"
+            className="text-black rounded-xl hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300"
             variant="outline"
             onClick={handleContactMeClick}
           >

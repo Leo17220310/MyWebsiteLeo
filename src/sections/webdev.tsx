@@ -26,7 +26,7 @@ const WebDev = () => {
 
   return (
     <>
-    <div className="bg-gray-100 p-6 md:p-16 rounded-xl h-[800px] shadow-lg dark:bg-neutral-800 m-[200px] ">
+    <div className="bg-gray-100 p-6 md:p-16 rounded-xl h-[800px] shadow-xl dark:bg-neutral-800 m-[200px] ">
       <div className="max-w-[100rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto mb-[200px]  mt-[-100px] ">
         <div className="relative p-6 md:p-16">
           <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">

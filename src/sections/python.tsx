@@ -1,3 +1,5 @@
+// Python.tsx
+
 import React, { useState } from "react";
 import hljs from "highlight.js/lib/core";
 import python from "highlight.js/lib/languages/python";
@@ -6,7 +8,7 @@ import "tailwindcss/tailwind.css";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-hljs.registerLanguage("python", python);
+
 
 const Python: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -20,7 +22,6 @@ const Python: React.FC = () => {
   const handleContact = () => {
     window.location.href = "mailto:leo.radtke.info@gmail.com";
   };
-
   const pythonCodeSamples = {
     nft: `
     import json
@@ -327,7 +328,9 @@ const Python: React.FC = () => {
   };
 
   return (
-    <>  <div className="bg-gray-100 p-6 md:p-16 rounded-xl shadow-lg dark:bg-neutral-800 m-[200px]">
+
+    <>  
+    <div className="bg-gray-100 p-6 md:p-16 rounded-xl shadow-xl dark:bg-neutral-800 m-[200px] " >
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
         <h2 className="text-3xl lg:text-4xl text-gray-800 font-mediumbold dark:text-neutral-200">
@@ -472,6 +475,7 @@ const Python: React.FC = () => {
         </pre>
       </div>
     </div>
+
       )}
     </>
   );

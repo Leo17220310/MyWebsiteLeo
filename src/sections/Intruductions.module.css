@@ -1,0 +1,12 @@
+/* Intruductions.module.css */
+
+/* Definiere die CSS-Klasse für die Animation */
+.content {
+  opacity: 0; /* Setze die Anfangsopazität auf 0, damit der Inhalt unsichtbar ist */
+  transition: opacity 2s ease; /* Definiere die Übergangseigenschaften */
+}
+
+/* Füge die Klasse 'show' hinzu, um die Animation auszulösen */
+.content.show {
+  opacity: 1; /* Setze die Opazität auf 1, um den Inhalt sichtbar zu machen */
+}

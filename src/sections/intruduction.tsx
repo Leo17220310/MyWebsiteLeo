@@ -89,18 +89,19 @@ const Intruductions = () => {
           CSS, and Python.
         </p>
       </div>
-
+      <div className={`${styles.buttonContainer}`}>
       <div className="mt-[30px] ml-[210px]">
         <Button
-          className="text-black rounded-full hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300"
+          className={`text-black rounded-full hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300 ${showContent ? styles.slideIn : ""}`}
           variant="outline"
           onClick={handleContactMeClick}
         >
           Contact Me
         </Button>
       </div>
+      </div>
 
-      <div className="w-[700px] h-[600px] mt-[-400px] ml-[1100px]">
+      <div className={`w-[700px] h-[600px] mt-[-400px] ml-[1100px] ${showContent ? styles.slideIn : ""}`}>
         <img
           src="/coder.png"
           className="small-logo"

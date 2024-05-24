@@ -10,3 +10,41 @@
 .content.show {
   opacity: 1; /* Setze die Opazität auf 1, um den Inhalt sichtbar zu machen */
 }
+
+.slideIn {
+  animation: slideInAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes slideInAnimation {
+  from {
+    transform: translateX(100px) rotate(45deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+.buttonContainer {
+  position: absolute;
+  top: 50%;
+  margin-top: 100px;
+  margin-left: 1200px;
+  animation: slideButton 1s ease-in-out forwards;
+}
+
+@keyframes slideButton {
+  from {
+    position: absolute;
+    top: 50%;
+    margin-top: 100px;
+    margin-left: 1200px;
+  }
+  to {
+    position: absolute;
+    top: 50%;
+    margin-top: 100px;
+    margin-left: 0px;
+  }
+}

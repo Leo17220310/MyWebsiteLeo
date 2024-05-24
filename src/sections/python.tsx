@@ -331,13 +331,13 @@ const Python: React.FC = () => {
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
         <h2 className="text-3xl lg:text-4xl text-gray-800 font-mediumbold dark:text-neutral-200">
-          My <span className="text-blue-300 font-bold"> Python </span>
-          Projects –{" "}
-          <span className="text-blue-300 font-bold">Different </span> facets
+          My <span className="p-2 text-blue-300 font-bold border-4 border-dashed border-blue-300 space-x-4 rounded-xl"> Python </span>
+        <span className="ml-[10px]">Projects –</span>  {" "}
+          <span className="text-blue-300 font-bold  ">Different </span>  facets
         </h2>
         <div className="mt-4 mb-[-100px]">
           <Button
-            className="text-black rounded-xl hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300"
+            className="text-black rounded-full hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300 "
             variant="outline"
             onClick={handleContact}
           >

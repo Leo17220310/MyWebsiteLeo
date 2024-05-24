@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
+import { Target } from "lucide-react";
 
 const WebDev = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -12,6 +13,16 @@ const WebDev = () => {
   const handleContact = () => {
     window.location.href = "mailto:leo.radtke.info@gmail.com";
   };
+  const handleVisit1 = () => {
+    window.location.href = "https://summarizer.kuehnle.me/";
+  }
+  const handleVisit2 = () => {
+    window.location.href = "https://leo17220310.github.io/Portfolio/"
+    
+  }
+  const handleVisit3 = () => {
+    window.location.href = "https://leo-radtke.me/"
+  }
 
   return (
     <>
@@ -28,7 +39,7 @@ const WebDev = () => {
                 </h2>
                 <div style={{ position: "relative" }}>
                   <Button
-                    className="  mt-[20px] text-black rounded-xl hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300"
+                    className="  mt-[20px] rounded-full text-black  hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300"
                     variant="outline"
                     onClick={handleContact}
                   >
@@ -37,7 +48,7 @@ const WebDev = () => {
                 </div>
               </div>
 
-              <div className="ml-[-70px]">
+              <div className="m-[2px]  border-4 border-blue-300 border-dashed rounded-xl">
                 <nav
                   className="grid gap-4 mt-5 md:mt-10"
                   aria-label="Tabs"
@@ -77,8 +88,8 @@ const WebDev = () => {
                           Summarizer
                         </span>
                         <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">
-                          This website can summarize texts, PDFs, images and is
-                          therefore very precise because of an AI API
+                          This website can texts, PDFs, images and is
+                          therefore very precise because of an <span className="text-blue-300 font-bold"> AI</span>  API
                         </span>
                       </span>
                     </span>
@@ -115,7 +126,7 @@ const WebDev = () => {
                           Old Portfolio
                         </span>
                         <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">
-                          This website was my old portfolio created with HTML
+                          This website was my old <span  className="text-blue-300 font-bold"> Portfolio</span> created with HTML
                           and CSS very basic
                         </span>
                       </span>
@@ -157,7 +168,8 @@ const WebDev = () => {
                         </span>
                         <span className="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">
                           This portfolio is of course also mine and was created
-                          with Tailwind TypeScript React
+                          with Tailwind, TypeScript, <span className="text-blue-300 font-bold"> React </span>
+.                      
                         </span>
                       </span>
                     </span>
@@ -182,6 +194,17 @@ const WebDev = () => {
                       height={480}
                       className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
                     />
+                    
+              <div className="ml-[200px]">
+                  <Button
+                    className="  mt-[20px] text-black rounded-full hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300"
+                    variant="outline"
+                    onClick={handleVisit1}
+                   
+                  >
+                    Visit Website
+                  </Button>
+              </div>
                   </div>
 
                   <div
@@ -197,6 +220,17 @@ const WebDev = () => {
                       height={480}
                       className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
                     />
+                    
+              <div className="ml-[200px]">
+                  <Button
+                    className="  mt-[20px] text-black rounded-full hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300"
+                    variant="outline"
+                    onClick={handleVisit2}
+                  >
+                    Visit Website
+                  </Button>
+              </div>
+        
                   </div>
 
                   <div
@@ -212,6 +246,16 @@ const WebDev = () => {
                       height={480}
                       className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/20"
                     />
+                    
+              <div className="ml-[200px]">
+                  <Button
+                    className="  mt-[20px] text-black rounded-full hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300"
+                    variant="outline"
+                    onClick={handleVisit3}
+                  >
+                    Visit Website
+                  </Button>
+              </div>
                   </div>
                 </div>
 
@@ -244,6 +288,7 @@ const WebDev = () => {
                     />
                   </svg>
                 </div>
+
               </div>
             </div>
           </div>

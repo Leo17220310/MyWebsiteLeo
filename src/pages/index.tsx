@@ -13,23 +13,6 @@ import Pricing from "../sections/pricing";
 
 export default function Home() {
 
-   //Check if device is desktop or mobile
-  
-   useEffect(() => {
-     const checkDevice = () => {
-       if (window.innerWidth < 1024) {
-          window.location.href = "https:leo17220310.github.io/Portfolio/";
-       }
-     };
-
-     checkDevice();
-     window.addEventListener('resize', checkDevice);
-
-     return () => {
-       window.removeEventListener('resize', checkDevice);
-     };
-   }, []);
-
 
 
   // Scroll to different Sections

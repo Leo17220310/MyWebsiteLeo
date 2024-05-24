@@ -1,3 +1,6 @@
+# To better understand this file read this:
+# https://docs.ionos.space/docs/github-actions-customization/
+
 name: "Deploy Now: Execute Build"
 
 on:
@@ -11,10 +14,10 @@ on:
         type: string
 
 env:
-  DEPLOYMENT_FOLDER: public
+  DEPLOYMENT_FOLDER: dist
 
 jobs:
-  # Please do not rename this job
+# Please do not rename this job
   build-project:
     name: build MyWebsiteLeo
     runs-on: ubuntu-latest
@@ -27,26 +30,25 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '22.x' 
-
-      - name: Install dependencies
-        run: npm install  # Installiere die Abhängigkeiten
+          node-version: v22.x
 
       - name: Build Node assets
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
-        run: npm run build  # Führe den Build-Befehl aus
+        run: |
+          npm ci
+          npm run build
 
-      # Please do not touch the following action
+# Please do not touch the following action
       - name: Store deployment content
         uses: ionos-deploy-now/artifact-action@v1
         with:
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
-          project-id: cea0bf80-3a8d-4dc8-955c-15636a75b7c9
+          project-id: b73a81ab-fd46-4e93-af30-0575ce330297
           branch-id: ${{ inputs.branch-id }}
           version: ${{ github.sha }}
           folder: ${{ env.DEPLOYMENT_FOLDER }}
-          config-file: .deploy-now/Portfolio/config.yaml
+          config-file: .deploy-now/MyWebsiteLeo/config.yaml
           action: upload

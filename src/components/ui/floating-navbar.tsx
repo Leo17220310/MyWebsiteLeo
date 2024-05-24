@@ -10,7 +10,6 @@ export const FloatingNav = ({
   scrollToHome,
   scrollToPython,
   scrollToExperience,
-  scrollToPricing,
 }: {
   navItems: {
     name: string;
@@ -22,7 +21,7 @@ export const FloatingNav = ({
   scrollToHome: () => void;
   scrollToPython: () => void;
   scrollToExperience: () => void;
-  scrollToPricing: () => void;
+
 }) => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
@@ -108,10 +107,6 @@ export const FloatingNav = ({
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </button>
 
-          <button className=" hover:bg-gray-200 border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full" onClick={scrollToPricing} >
-            <span>Pricing</span>
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-          </button>
         </motion.div>
       )}
     </AnimatePresence>

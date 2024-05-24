@@ -333,8 +333,7 @@ const Python: React.FC = () => {
         <h2 className="text-3xl lg:text-4xl text-gray-800 font-mediumbold dark:text-neutral-200">
           My <span className="text-blue-300 font-bold"> Python </span>
           Projects –{" "}
-          <span className="text-blue-300 font-bold">Contact me</span> for
-          Your Perfect Solution!
+          <span className="text-blue-300 font-bold">Different </span> facets
         </h2>
         <div className="mt-4 mb-[-100px]">
           <Button
@@ -419,7 +418,7 @@ const Python: React.FC = () => {
 
         {/* Turtle Christmas Tree Card */}
         <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-          <div className="h-52 flex flex-col justify-center items-center bg-amber-500 rounded-t-xl">
+          <div className="h-52 flex flex-col justify-center items-center bg-blue-200 rounded-t-xl">
             <img
               src="/tree.png"
               alt="Turtle Christmas Tree"

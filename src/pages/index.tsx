@@ -6,29 +6,29 @@ import NavBar from "../components/ui/floating-navbar"
 import Python from "../sections/python"
 import Language from "../sections/language"
 import Footer from "../sections/footer"
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import Experience from "../sections/experience";
 import Pricing from "../sections/pricing";
 
 
 export default function Home() {
 
- // Check if device is desktop or mobile
+   //Check if device is desktop or mobile
   
-  // useEffect(() => {
-  //   const checkDevice = () => {
-  //     if (window.innerWidth < 1024) {
-  //        window.location.href = "https://leo17220310.github.io/Portfolio/";
-  //     }
-  //   };
+   useEffect(() => {
+     const checkDevice = () => {
+       if (window.innerWidth < 1024) {
+          window.location.href = "https:leo17220310.github.io/Portfolio/";
+       }
+     };
 
-  //   checkDevice();
-  //   window.addEventListener('resize', checkDevice);
+     checkDevice();
+     window.addEventListener('resize', checkDevice);
 
-  //   return () => {
-  //     window.removeEventListener('resize', checkDevice);
-  //   };
-  // }, []);
+     return () => {
+       window.removeEventListener('resize', checkDevice);
+     };
+   }, []);
 
 
 
@@ -62,12 +62,7 @@ export default function Home() {
     }
   };
 
-  const scrollToPricing = () => {
-    const python = document.getElementById("pricing-section");
-    if (python) {
-      python.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
 
 
   return (
@@ -93,10 +88,10 @@ export default function Home() {
       <div>
         <BgAnimation/>
       </div>
-
+{/*         
        <div   id="experience-section">
         <Experience />
-      </div>
+      </div> */}
 
       {/* WEB DEV INFORMATION */}
         <div id="web-dev-section" className='mb-[200px] mt-[200px]'  > 
@@ -124,7 +119,7 @@ export default function Home() {
       
       {/* Navbar */}
        <div>
-       <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} scrollToPython={scrollToPython} scrollToExperience={scrollToExperience} scrollToPricing={scrollToPricing}/> 
+       <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} scrollToPython={scrollToPython} scrollToExperience={scrollToExperience} />
       </div> 
 
       {/* Footer */}

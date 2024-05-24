@@ -51,7 +51,7 @@ const Footer = () => {
               <p>
                 <a
                   className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
-                  href="https://leo-radtke.de/"
+                  href="https://leo-radtke.me/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

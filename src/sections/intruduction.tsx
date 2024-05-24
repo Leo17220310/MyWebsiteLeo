@@ -63,7 +63,7 @@ const Intruductions = () => {
 
         <div className="mt-[-200px] ml-[210px] text-black font-bold">
           <p className="text-white-700 text-sm sm:text-base font-medium">
-            Welcome to Leo's{" "}
+            Welcome to Leos{" "}
             <span className="text-blue-300 font-bold">Portfolio.</span>
           </p>
         </div>

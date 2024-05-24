@@ -112,9 +112,9 @@ export default function Home() {
       
 
      {/* Pricing */}
-       <div className='mb-[200px]' id="pricing-section">
+       {/* <div className='mb-[200px]' id="pricing-section">
        <Pricing></Pricing>
-      </div> 
+      </div>  */}
       
    
       {/* Home Navbar Item */}

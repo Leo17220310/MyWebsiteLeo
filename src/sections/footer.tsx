@@ -13,13 +13,8 @@ const Footer = () => {
     alert("Snapchat-Benutzername wurde in die Zwischenablage kopiert: " + text);
   };
 
-  const handleImpressum = () => {
-    setIsModalOpen(true);
-  };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+
 
   return (
     <>
@@ -104,14 +99,7 @@ const Footer = () => {
                     Management E-mail
                   </a>
                 </p>
-                <p>
-                  <a
-                    className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200"
-                    onClick={handleImpressum}
-                  >
-                    Impressum & Privacy
-                  </a>
-                </p>
+  
               </div>
             </div>
 
@@ -171,62 +159,6 @@ const Footer = () => {
             </div>
       </footer>
 
-      {isModalOpen && (
-        <>
-          <div className="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40 ">
-            <button
-              type="button"
-              className=" flex justify-center items-center size-7 text-sm font-semibold rounded-lg border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-transparent dark:hover:bg-neutral-700"
-              onClick={closeModal} // Add this onClick handler
-            >
-              <span className="sr-only">Close</span>
-              <svg
-                className="flex-shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
-            </button>
-            <div className="text-blue-300 text-3xl font-bold text-center mb-4 hover:underline hover:text-blue-300">
-              Imprint
-            </div>
-            <div className="text-center">
-              <p className="mb-4">Name: Leo Radtke</p>
-              <p className="mb-4">Address: Bachstraße 96, 22083 Hamburg</p>
-              <p className="mb-4">Contact: leo.radtke.info@gmail.com</p>
-              <p className="mb-4">
-                Professional Information: I offer services in the field of
-                website development.
-              </p>
-              <p className="mb-4">
-                Disclaimer: The information provided on this website is for
-                general informational purposes only. I do not make any
-                representations or warranties of any kind, express or implied,
-                about the completeness, accuracy, reliability, or suitability of
-                the information.
-              </p>
-              <p className="mb-4">
-                Copyright: All content, including text, images, and graphics, on
-                this website is copyrighted and may not be reproduced, modified,
-                or distributed without my express written consent.
-              </p>
-              <p>
-                Privacy Policy: This website does not collect or store any
-                personally identifiable information of its visitors.
-              </p>
-            </div>
-          </div>
-        </>
-      )}
     </>
   );
 };

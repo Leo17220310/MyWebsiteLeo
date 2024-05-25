@@ -106,6 +106,12 @@ const Intruductions = () => {
         <img src="/git.png" alt="Git" width={30} height={30} />
         </a>
       </div>
+
+      <div  className={`ml-[390px] mt-[-29px] ${showContent ? styles.slideIn : ""}`}>
+      <a href="https://www.instagram.com/leo22031017/">
+        <img src="/instaa.png" alt="Git" width={30} height={30} />
+        </a>
+      </div>
  
       <div className={`w-[700px] h-[800px] mt-[-410px] ml-[1100px] ${showContent ? styles.slideIn : ""}`}>
         <img

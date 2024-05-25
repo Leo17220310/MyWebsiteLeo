@@ -126,6 +126,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="flex flex-col items-center mt-10 w-full">
+          <p className="text-sm text-gray-400 dark:text-neutral-400 text-center">
+           <a href="https://www.flaticon.com/search?word=instagram">Icon credits: Freepik (Instagram)</a>and <a href="https://www.flaticon.com/search?word=github">Pixel perfect (GitHub) - Flaticon</a> 
+          </p>
+        </div>
 
         <div className="flex flex-col items-center mt-10 w-full">
           <p className="text-sm text-gray-400 dark:text-neutral-400 text-center">

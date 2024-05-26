@@ -6,7 +6,7 @@ import Link from "next/link";
 export const FloatingNav = ({
   navItems,
   className,
-  scrollToWebDev, // Callback-Funktion für das Scrollen zur Webentwicklungssektion
+  scrollToWebDev, 
   scrollToHome,
   scrollToPython,
   
@@ -17,7 +17,7 @@ export const FloatingNav = ({
     icon?: JSX.Element;
   }[];
   className?: string;
-  scrollToWebDev: () => void; // Typ für die Callback-Funktion
+  scrollToWebDev: () => void; 
   scrollToHome: () => void;
   scrollToPython: () => void;
 
@@ -84,7 +84,7 @@ export const FloatingNav = ({
           ))}
            <button
             className="hover:bg-gray-200 border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"
-            onClick={scrollToHome} // Hier wird der Klick-Handler hinzugefügt
+            onClick={scrollToHome} 
           >
             <span>Home</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />

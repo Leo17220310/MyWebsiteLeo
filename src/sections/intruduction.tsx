@@ -158,7 +158,7 @@ const Intruductions = () => {
           </div>
         </div>
 
-      
+     
 
         <div className="text-black mt-[200px] ml-[60px] mr-[50px] sm:mt-[200px] sm:ml-[210px] mb-4 ">
         <hr className="mb-4"></hr>
@@ -171,8 +171,9 @@ const Intruductions = () => {
             CSS, and Python.
           </p>
         </div>
-        <div className={` ${styles.buttonContainer}`}>
-          <div className="mt-[30px] ml-[60px] md:hidden block">
+        <hr className="block md:hidden"></hr>
+        <div>
+          <div className="mt-[40px] ml-[60px] md:hidden block">
             <Button
               className={`text-black rounded-full hover:bg-blue-200 hover:shadow-xl hover:shadow-blue-300 ${
                 showContent ? styles.slideIn : ""
@@ -185,21 +186,22 @@ const Intruductions = () => {
           </div>
         </div>
       </div>
-      <hr className="block md:hidden"></hr>
+      
       <div
-        className={`ml-[200px] mt-[35px] ${showContent ? styles.slideIn : ""}`}
+        className={`ml-[200px] mt-[-35px] ${showContent ? styles.slideIn : ""}`}
       >
         <a href="https://github.com/Leo17220310">
           <img src="/git.png" alt="Git" width={30} height={30} />
         </a>
       </div>
       <div
-        className={`ml-[250px] mt-[-29px] ${showContent ? styles.slideIn : ""}`}
+        className={`ml-[250px] mt-[-29px]  ${showContent ? styles.slideIn : ""}`}
       >
         <a href="https://www.instagram.com/leo22031017/">
           <img src="/instaa.png" alt="Git" width={30} height={30} />
         </a>
       </div>
+    
       <div className=" block md:hidden">
    
         <span className="ml-[175px] mt-[60px] mb-4 inline-flex justify-center items-center size-[62px] rounded-full border-4 border-blue-200 bg-blue-200 text-blue-300 dark:bg-yellow-700 dark:border-yellow-600 dark:text-yellow-100">

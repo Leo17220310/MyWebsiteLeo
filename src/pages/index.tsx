@@ -50,7 +50,7 @@ export default function Home() {
       </div>
 
       {/* WEB DEV INFORMATION */}
-      <div id="web-dev-section" className="mt-[-300px]">
+      <div id="web-dev-section" className="mt-[-400px]">
         <WebDev />
       </div>
 

@@ -336,7 +336,7 @@ const Python: React.FC = () => {
     
     
 
-      <div className="bg-gray-100 p-6 md:p-16 rounded-xl shadow-xl dark:bg-neutral-800 m-[200px] ">
+      <div className=" bg-gray-100 p-6 md:p-16 rounded-xl shadow-xl dark:bg-neutral-800 m-[200px] ">
      
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">

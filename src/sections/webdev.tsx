@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import ParticlesBackground from "@/components/ui/particles";
+import BgAnimation from "./backgroundAnimation";
 
 const WebDev = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -26,6 +27,10 @@ const WebDev = () => {
     <>
        <div className="relative hidden md:block mt-[-300px]">
        <ParticlesBackground />
+       <div className="absolute inset-0 z-10 ml-[-600px]">
+        <BgAnimation></BgAnimation>
+       </div>
+       
        
 
         <div className="bg-gray-100 p-6 md:p-16 rounded-xl h-[800px] shadow-xl dark:bg-neutral-800 m-[200px]  ">

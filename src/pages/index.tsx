@@ -65,7 +65,7 @@ export default function Home() {
       </div>
 
       {/* Navbar */}
-      <div>
+      <div className="hidden md:block">
         <NavBar
           navItems={[]}
           scrollToWebDev={scrollToWebDev}

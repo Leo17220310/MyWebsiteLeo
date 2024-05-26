@@ -26,7 +26,6 @@
     "i18next": "^23.11.4",
     "lucide-react": "^0.366.0",
     "next": "14.2.3",
-    "particles.js": "^2.0.0",
     "python-shell": "^5.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -35,8 +34,7 @@
     "react-router-dom": "^6.23.1",
     "simplex-noise": "^4.0.1",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7",
-    "tsparticles": "^3.4.0"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,20 +1,16 @@
-
-import Intruduction from "../../src/sections/intruduction"
-import BgAnimation from "../../src/sections/backgroundAnimation"
-import WebDev from "../../src/sections/webdev"
-import NavBar from "../components/ui/floating-navbar"
-import Python from "../sections/python"
-import Language from "../sections/language"
-import Footer from "../sections/footer"
-import React, { Component, useEffect } from "react";
-import Experience from "../sections/experience";
-import Pricing from "../sections/pricing";
-
+import React, { useEffect } from "react";
+import Intruduction from "../../src/sections/intruduction";
+import BgAnimation from "../../src/sections/backgroundAnimation";
+import WebDev from "../../src/sections/webdev";
+import NavBar from "../components/ui/floating-navbar";
+import Python from "../sections/python";
+import Footer from "../sections/footer";
+import ParticlesBackground from "@/components/ui/particles";
+// import Language from "../sections/language"; // Uncomment if needed
+// import Experience from "../sections/experience"; // Uncomment if needed
+// import Pricing from "../sections/pricing"; // Uncomment if needed
 
 export default function Home() {
-
-
-
   // Scroll to different Sections
   const scrollToWebDev = () => {
     const webDevSection = document.getElementById("web-dev-section");
@@ -23,89 +19,72 @@ export default function Home() {
     }
   };
 
-
   const scrollToHome = () => {
-    const html = document.querySelector('html');
+    const html = document.querySelector("html");
     if (html) {
-      html.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      html.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   const scrollToPython = () => {
-    const python = document.getElementById("python-section");
-    if (python) {
-      python.scrollIntoView({ behavior: "smooth" });
+    const pythonSection = document.getElementById("python-section");
+    if (pythonSection) {
+      pythonSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-
-
-
-
-
   return (
     <>
-  
-
-
-      {/* Language not avialble */}
-
+      {/* Language not available */}
       {/* <div>
         <Language />
       </div> */}
-  
 
-
-      {/* HOME INTRUDUCTION  */}
-       <div className='mb-[200px]'> 
-        <Intruduction />
-      </div> 
-
-
-      {/* BACKGROUND ANIMATION  */}
+      {/* HOME INTRODUCTION */}
       <div>
-        <BgAnimation/>
+        <Intruduction />
+        <ParticlesBackground />
       </div>
-{/*         
-       <div   id="experience-section">
-        <Experience />
-      </div> */}
+
+      {/* BACKGROUND ANIMATION */}
+      <div>
+        <BgAnimation />
+      </div>
 
       {/* WEB DEV INFORMATION */}
-        <div id="web-dev-section" className='mb-[200px] mt-[200px]'  > 
-        <WebDev /> 
-      </div>  
-
-
+      <div id="web-dev-section" className="mt-[-300px]"> {/* Hier den Abstand anpassen */}
+        <WebDev />
+      </div>
 
       {/* Python Experience Section */}
-        <div className='mb-[200px]' id="python-section">
-        <Python></Python>
-      </div>  
-      
+      <div className="mb-20" id="python-section"> {/* Hier den Abstand anpassen */}
+        <Python />
+        </div>
 
-     {/* Pricing */}
-       {/* <div className='mb-[200px]' id="pricing-section">
-       <Pricing></Pricing>
-      </div>  */}
-      
-   
+      {/* Pricing */}
+      {/* <div className='mb-20' id="pricing-section">
+        <Pricing />
+      </div> */}
+
       {/* Home Navbar Item */}
       <div>
-        <button onClick={scrollToHome}></button>
+        <button onClick={scrollToHome}>Home</button>
       </div>
-      
+
       {/* Navbar */}
-       <div>
-       <NavBar navItems={[]} scrollToWebDev={scrollToWebDev} scrollToHome={scrollToHome} scrollToPython={scrollToPython}  />
-      </div> 
+      <div>
+        <NavBar
+          navItems={[]}
+          scrollToWebDev={scrollToWebDev}
+          scrollToHome={scrollToHome}
+          scrollToPython={scrollToPython}
+        />
+      </div>
 
       {/* Footer */}
       <div>
         <Footer />
       </div>
-  
     </>
   );
 }
-

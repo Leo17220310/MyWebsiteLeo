@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 import { Button } from "@/components/ui/button";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "../components/ui/tabs";
-import Coder from "../assets/coder.png";
 import styles from "./Intruductions.module.css"; // Importiere das CSS-Modul
 
 const Intruductions = () => {
@@ -61,6 +54,7 @@ const Intruductions = () => {
   }, []);
 
   return (
+   
     <div className={`${styles.content} ${showContent ? styles.show : ""}`}>
       <div className="mt-[200px] ml-[210px] sm:mt-[300px] sm:ml-[210px] text-5xl font-bold text-black">
         <h1>
@@ -70,7 +64,7 @@ const Intruductions = () => {
           </span>
         </h1>
       </div>
-
+      <div className={`${styles.content} ${showContent ? styles.show : ""}`}>
       <div className="mt-[-200px] ml-[210px] text-black font-bold">
         <p className="text-white-700 text-sm sm:text-base font-medium">
           Welcome to Leos{" "}
@@ -100,6 +94,7 @@ const Intruductions = () => {
         </Button>
       </div>
       </div>
+    </div>
 
     <div  className={`ml-[340px] mt-[44px] ${showContent ? styles.slideIn : ""}`}>
       <a href="https://github.com/Leo17220310">

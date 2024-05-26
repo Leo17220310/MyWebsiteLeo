@@ -188,14 +188,14 @@ const Intruductions = () => {
       </div>
       
       <div
-        className={`ml-[200px] mt-[-35px] ${showContent ? styles.slideIn : ""}`}
+        className={`ml-[200px] mt-[-35px] `}
       >
         <a href="https://github.com/Leo17220310">
           <img src="/git.png" alt="Git" width={30} height={30} />
         </a>
       </div>
       <div
-        className={`ml-[250px] mt-[-29px]  ${showContent ? styles.slideIn : ""}`}
+        className={`ml-[250px] mt-[-29px]  `}
       >
         <a href="https://www.instagram.com/leo22031017/">
           <img src="/instaa.png" alt="Git" width={30} height={30} />

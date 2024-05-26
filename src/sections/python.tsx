@@ -331,7 +331,7 @@ const Python: React.FC = () => {
 
   return (
     <>
-      <div className="relative mt-300px]">
+      <div className="relative hidden md:block">
        <ParticlesBackground />
     
     

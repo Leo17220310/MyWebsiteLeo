@@ -30,7 +30,7 @@ const ParticlesBackground: React.FC = () => {
         particlesArray.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 4 + 1,
+          size: Math.random() * 2 + 1,
           speedX: Math.random() * 2 * getRandomDirection(),
           speedY: Math.random() * 2 * getRandomDirection(),
           color: `rgba(200, 200, 200, ${Math.random()})`, // Blau

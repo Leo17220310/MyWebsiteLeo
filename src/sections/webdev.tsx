@@ -24,7 +24,7 @@ const WebDev = () => {
 
   return (
     <>
-      <div className="relative mt-[-300px]">
+       <div className="relative hidden md:block mt-[-300px]">
        <ParticlesBackground />
        
 

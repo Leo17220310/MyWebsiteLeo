@@ -35,10 +35,8 @@ export default function Home() {
 
   return (
     <>
-      {/* Language not available */}
-      {/* <div>
-        <Language />
-      </div> */}
+      {/* Viewport Meta Tag */}
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
       {/* HOME INTRODUCTION */}
       <div>
@@ -52,23 +50,18 @@ export default function Home() {
       </div>
 
       {/* WEB DEV INFORMATION */}
-      <div id="web-dev-section" className="mt-[-300px]"> {/* Hier den Abstand anpassen */}
+      <div id="web-dev-section" className="mt-[-300px]">
         <WebDev />
       </div>
 
       {/* Python Experience Section */}
-      <div className="mb-20" id="python-section"> {/* Hier den Abstand anpassen */}
+      <div className="mb-20" id="python-section">
         <Python />
-        </div>
-
-      {/* Pricing */}
-      {/* <div className='mb-20' id="pricing-section">
-        <Pricing />
-      </div> */}
+      </div>
 
       {/* Home Navbar Item */}
       <div>
-        <button onClick={scrollToHome}>Home</button>
+        <button onClick={scrollToHome}></button>
       </div>
 
       {/* Navbar */}

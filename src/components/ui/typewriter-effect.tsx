@@ -69,7 +69,7 @@ export const TypewriterEffectSmooth: React.FC<TypewriterEffectSmoothProps> = ({
   return (
     <div className={cn('flex space-x-1 my-6', className)}>
       <div
-        className="text-blue-300 text-xs sm:text-base md:text-xl lg:text-3xl xl:text-5xl font-bold"
+        className="text-blue-300 text-3xl sm:text-base md:text-xl lg:text-3xl xl:text-5xl font-bold"
       >
         {displayText}
       </div>
@@ -78,7 +78,7 @@ export const TypewriterEffectSmooth: React.FC<TypewriterEffectSmoothProps> = ({
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, repeat: Infinity, repeatType: 'reverse' }}
         className={cn(
-          'block rounded-sm w-[4px] h-4 sm:h-6 xl:h-12 bg-blue-300',
+          'block rounded-sm w-[4px] h-[35px] sm:h-6 xl:h-12 bg-blue-300',
           cursorClassName
         )}
       ></motion.span>

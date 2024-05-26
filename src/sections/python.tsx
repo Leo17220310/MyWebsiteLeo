@@ -334,7 +334,7 @@ const Python: React.FC = () => {
     <>
       <div className="relative hidden md:block">
        <ParticlesBackground />
-       <div className="absolute inset-0 z-10 ml-[px] mt-[-100px]">
+       <div className="">
         <BgAnimation></BgAnimation>
        </div>
     
@@ -367,7 +367,7 @@ const Python: React.FC = () => {
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto mt-[100px]">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* NFT Collections Card */}
-            <div className="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+            <div className="group  flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
               <div className="h-52 flex flex-col justify-center items-center bg-blue-200 rounded-t-xl">
                 <img
                   src="/collections.png"
